@@ -4,6 +4,8 @@ export default function ErrorPage() {
     const error = useRouteError();
     console.error(error);
 
+    document.title = `Subsquid > ${error.statusText || "Error"}`
+
     return (
         <div id="error-page">
             <h1>Oops!</h1>
