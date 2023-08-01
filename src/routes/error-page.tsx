@@ -5,7 +5,7 @@ import Footer from "../components/Footer/Footer";
 import * as React from "react";
 
 export default function ErrorPage() {
-    const error = useRouteError();
+    const error: any = useRouteError();
     console.error(error);
 
     document.title = `Subsquid > ${error.statusText || "Error"}`

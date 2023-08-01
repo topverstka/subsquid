@@ -9,7 +9,6 @@ import "./App.scss"
 
 const router = createBrowserRouter([
     {
-        title: "Home",
         path: "/",
         element: <Root/>,
         errorElement: <ErrorPage/>,
