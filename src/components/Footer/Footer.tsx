@@ -1,4 +1,8 @@
 import './Footer.scss'
+import powered from '../../assets/images/powered.svg'
+import Polygon from '../../assets/images/Polygon.svg'
+import GCloud from '../../assets/images/GCloud.png'
+import Substrabe from '../../assets/images/Substrabe.svg'
 
 export default function Footer() {
     return (
@@ -11,10 +15,10 @@ export default function Footer() {
                         <p>Subsquid Labs GmbH, Zug, Switzerland</p>
                     </div>
                     <div className="Footer__logos">
-                        <img src="/public/images/powered.svg" alt=""/>
-                        <a href="#!"><img src="/public/images/Polygon.svg" alt=""/></a>
-                        <a href="#!"><img src="/public/images/GCloud.png" alt=""/></a>
-                        <a href="#!"><img src="/public/images/Substrabe.svg" alt=""/></a>
+                        <img src={powered} alt=""/>
+                        <a href="#!"><img src={Polygon} alt=""/></a>
+                        <a href="#!"><img src={GCloud} alt=""/></a>
+                        <a href="#!"><img src={Substrabe} alt=""/></a>
                     </div>
                 </div>
             </div>
