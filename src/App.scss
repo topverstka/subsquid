@@ -1,0 +1,28 @@
+.Container {
+  max-width: 1290px + (24px * 2);
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.Button {
+  display: inline-flex;
+  align-items: center;
+  height: 36px;
+  padding: 0 16px;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  border-radius: 4px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.01), 0 11px 9px 0 rgba(0, 0, 0, 0.01);
+  user-select: none;
+  transition: background-color .2s, color .1s;
+
+  &--second {
+    background-color: var(--color-secondary);
+
+    &:hover {
+      background-color: var(--grey-button-hover);
+      color: var(--color-black);
+    }
+  }
+}

@@ -1,9 +1,20 @@
+import Header from "../components/Header/Header";
+import Content from "../components/Content/Content";
+import Footer from "../components/Footer/Footer";
+import * as React from "react";
+
 export default function Root() {
     document.title = "Subsquid > Home"
 
     return (
         <>
-            <h1>React Router Contacts</h1>
+            <Header/>
+            <Content>
+                <div className="Container">
+                    <img src="/public/images/midjourney.jpg" alt=""/>
+                </div>
+            </Content>
+            <Footer/>
         </>
     );
 }

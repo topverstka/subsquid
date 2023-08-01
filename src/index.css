@@ -10,8 +10,11 @@
     --color-red: #F42F2F;
     --color-yellow: #FFC700;
 
+    --color-black-muted-60: rgba(0, 0, 0, 0.60);
+    --grey-button-hover: #E1E2E3;
+
     font-family: 'Circular Std', sans-serif;
-    line-height: 100%;
+    line-height: 1;
     font-weight: 450;
 
     color-scheme: light;
@@ -25,6 +28,33 @@
     -webkit-text-size-adjust: 100%;
 }
 
+html, body, h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    max-height: 100vh;
+    height: 100%;
+    overflow: hidden;
+}
+
+#root {
+    height: 100%;
+    overflow-y: auto;
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+img {
+    user-select: none;
+    max-width: 100%;
+    object-fit: cover;
+}
+
 @font-face {
     font-family: 'Circular Std';
     src: url('/public/fonts/CircularStd/CircularStd-MediumItalic.eot');
@@ -35,6 +65,7 @@
     url('/public/fonts/CircularStd/CircularStd-MediumItalic.ttf') format('truetype');
     font-weight: 500;
     font-style: italic;
+    font-display: swap;
 }
 
 @font-face {
@@ -47,6 +78,7 @@
     url('/public/fonts/CircularStd/CircularStd-Black.ttf') format('truetype');
     font-weight: 900;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -59,6 +91,7 @@
     url('/public/fonts/CircularStd/CircularStd-Medium.ttf') format('truetype');
     font-weight: 500;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -71,6 +104,7 @@
     url('/public/fonts/CircularStd/CircularStd-Bold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -83,6 +117,7 @@
     url('/public/fonts/CircularStd/CircularStd-BlackItalic.ttf') format('truetype');
     font-weight: 900;
     font-style: italic;
+    font-display: swap;
 }
 
 @font-face {
@@ -95,6 +130,7 @@
     url('/public/fonts/CircularStd/CircularStd-BookItalic.ttf') format('truetype');
     font-weight: normal;
     font-style: italic;
+    font-display: swap;
 }
 
 @font-face {
@@ -107,6 +143,7 @@
     url('/public/fonts/CircularStd/CircularStd-BoldItalic.ttf') format('truetype');
     font-weight: bold;
     font-style: italic;
+    font-display: swap;
 }
 
 @font-face {
@@ -119,4 +156,5 @@
     url('/public/fonts/CircularStd/CircularStd-Book.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }

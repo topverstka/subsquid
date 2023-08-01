@@ -5,6 +5,7 @@ import {
     createBrowserRouter,
     RouterProvider,
 } from "react-router-dom";
+import "./App.scss"
 
 const router = createBrowserRouter([
     {
@@ -17,8 +18,10 @@ const router = createBrowserRouter([
 
 export default function App() {
     return (
-        <React.StrictMode>
-            <RouterProvider router={router}/>
-        </React.StrictMode>
+        <>
+            <React.StrictMode>
+                <RouterProvider router={router}/>
+            </React.StrictMode>
+        </>
     );
 }
