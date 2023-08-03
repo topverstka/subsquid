@@ -1,29 +1,47 @@
+@import "../../assets/scss/spec/mixins";
+
 .Footer {
-  padding: 15px 0;
-  margin: 35px 0;
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--black-muted-10, rgba(29, 29, 30, 0.10));
+
+  @include media-up(md) {
+    padding: 16px 0;
+    margin-top: 100px;
+  }
 
   &__items {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
+
+    @include media-up(md) {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
   }
 
   &__texts {
     display: flex;
-    align-items: center;
-    gap: 0 20px;
+    flex-direction: column;
+    gap: 12px;
+
+    @include media-up(md) {
+      flex-direction: row;
+      align-items: center;
+    }
 
     p {
-      color: var(--color-black-muted-60, rgba(0, 0, 0, 0.60));
-      font-size: 14px;
-      font-weight: 500;
+      color: var(--black-muted-70, rgba(29, 29, 30, 0.70));
+      font-size: 12px;
+      font-weight: 450;
       line-height: 150%;
     }
 
     a {
-      color: var(--color-black, #000);
-      font-size: 14px;
-      font-weight: 500;
+      color: var(--black, #1D1D1F);
+      font-size: 12px;
+      font-weight: 450;
       line-height: 150%;
     }
   }
@@ -32,6 +50,17 @@
     display: flex;
     align-items: center;
     gap: 0 14px;
-    justify-content: flex-end;
+    justify-content: space-between;
+    padding: 16px 0;
+
+    @include media-up(md) {
+      padding: 0;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
   }
 }

@@ -10,13 +10,14 @@ export default function Footer() {
             <div className="Container">
                 <div className="Footer__items">
                     <div className="Footer__texts">
-                        <a href="#!">Disclaimer</a>
-                        <a href="#!">Imprint</a>
+                        <a href="#!">Disclaimer & Imprint</a>
                         <p>Subsquid Labs GmbH, Zug, Switzerland</p>
                     </div>
                     <div className="Footer__logos">
-                        <img src={powered} alt=""/>
-                        <a href="#!"><img src={Polygon} alt=""/></a>
+                        <div className="Footer__logo">
+                            <img src={powered} alt=""/>
+                            <a href="#!"><img src={Polygon} alt=""/></a>
+                        </div>
                         <a href="#!"><img src={GCloud} alt=""/></a>
                         <a href="#!"><img src={Substrabe} alt=""/></a>
                     </div>

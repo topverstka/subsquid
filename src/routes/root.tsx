@@ -9,11 +9,9 @@ export default function Root() {
 
     return (
         <>
-            <Header/>
+            <Header isDark={true}/>
             <Content>
-                <div className="Container">
-                    <img src={midjourney} alt=""/>
-                </div>
+                <img src={midjourney} alt=""/>
             </Content>
             <Footer/>
         </>
