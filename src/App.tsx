@@ -1,25 +1,25 @@
 import * as React from "react";
-import Root from "./routes/root";
 import ErrorPage from "./routes/error-page";
 import {
     createBrowserRouter,
     RouterProvider,
 } from "react-router-dom";
 import "./App.scss"
-import Builders from "./routes/builders";
+import BuildersPage from "./routes/BuildersPage/BuildersPage";
 import Appchain from "./routes/appchain";
 import Aquarium from "./routes/aquarium";
-import Network from "./routes/network";
+import HomePage from "./routes/Homepage/HomePage";
+import NetworkPage from "./routes/NetworkPage/NetworkPage";
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <Root/>,
+        element: <HomePage/>,
         errorElement: <ErrorPage/>,
     },
     {
         path: "/builders",
-        element: <Builders/>,
+        element: <BuildersPage/>,
     },
     {
         path: "/appchain",
@@ -31,7 +31,7 @@ const router = createBrowserRouter([
     },
     {
         path: "/network",
-        element: <Network/>,
+        element: <NetworkPage/>,
     },
 ]);
 

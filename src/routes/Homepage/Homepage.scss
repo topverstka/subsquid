@@ -1,0 +1,90 @@
+@import "../../assets/scss/spec/mixins";
+
+.HomePage {
+  &__first-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+
+    @include media-up(md) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__second-section {
+
+  }
+}
+
+.HomePage-card {
+  display: grid;
+  grid-template-areas: 'Icon Title' 'Desc Desc' 'Buttons Buttons';
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  align-content: space-between;
+  gap: 12px;
+  height: 100%;
+
+  @include media-up(xl) {
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas: 'Icon Title Buttons' 'Icon Desc Buttons';
+    gap: 16px 24px;
+    align-content: center;
+  }
+
+  &__icon {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+    grid-area: Icon;
+
+    @include media-up(xl) {
+      width: 64px;
+      height: 64px;
+    }
+  }
+
+  &__title {
+    grid-area: Title;
+  }
+
+  &__desc {
+    color: var(--black-muted-70, rgba(29, 29, 30, 0.70));
+    font-size: 16px;
+    font-weight: 450;
+    line-height: 150%;
+    letter-spacing: 0.32px;
+    grid-area: Desc;
+  }
+
+  &__buttons {
+    display: grid;
+    grid-template-areas: 'Button Button2';
+    grid-template-columns: repeat(2, minmax(100px, 200px));
+    gap: 24px;
+    text-align: center;
+    margin-top: 12px;
+    grid-area: Buttons;
+
+    @include media-up(xl) {
+      grid-template-columns: 130px;
+      gap: 16px;
+      margin-left: 8px;
+      margin-top: 0;
+      grid-template-areas:  'Button2' 'Button';
+    }
+
+    .Button {
+      justify-content: center;
+      padding: 0;
+    }
+  }
+
+  &__button {
+    grid-area: Button;
+  }
+
+  &__button2 {
+    grid-area: Button2;
+  }
+}

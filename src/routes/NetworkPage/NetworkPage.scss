@@ -1,0 +1,41 @@
+@import "../../assets/scss/spec/mixins";
+
+.NetworkPage{
+  &__sections {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 32px;
+
+    @include media-up(md) {
+      grid-template-columns: auto 1fr;
+    }
+
+    @include media-up(xl) {
+      gap: 40px;
+    }
+  }
+
+  &__section {
+    padding: 24px;
+
+    @include media-up(lg) {
+      padding: 32px;
+    }
+
+    @include media-up(xl) {
+      padding: 40px;
+    }
+  }
+
+  &__title {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  &__buttons {
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

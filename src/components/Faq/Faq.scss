@@ -1,0 +1,48 @@
+.FaqItem {
+  $root: &;
+  border-bottom: 1px solid var(--black-muted-10, rgba(29, 29, 30, 0.10));
+
+  &:not(:last-child) {
+    margin-bottom: 32px;
+  }
+
+  &__header {
+    display: grid;
+    grid-template-columns: 1fr 24px;
+    gap: 16px;
+    padding-bottom: 16px;
+    cursor: pointer;
+  }
+
+  &__title {
+    color: var(--black, #1D1D1F);
+    font-size: 16px;
+    font-weight: 450;
+    line-height: 150%;
+    letter-spacing: 0.32px;
+  }
+
+  &__main {
+    overflow: hidden;
+    transition: height .3s, margin .3s;
+  }
+
+  &__chevron {
+    transition: .2s;
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+  }
+
+  &--open {
+    #{$root} {
+      &__chevron {
+        transform: scaleY(-1);
+      }
+
+      &__main {
+        margin: 12px 0 24px 0;
+      }
+    }
+  }
+}

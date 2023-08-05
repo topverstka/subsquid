@@ -1,0 +1,88 @@
+@import "../../assets/scss/spec/mixins";
+
+.ChainItem {
+  grid-template-columns: 1fr;
+  gap: 12px;
+  text-align: center;
+  display: none;
+
+  &--visible {
+    display: grid;
+  }
+
+  &__title {
+    color: var(--black, #1D1D1F);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: -0.14px;
+  }
+
+  &__image {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    display: table;
+    margin: 0 auto;
+  }
+}
+
+.Chains {
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: flex-start;
+    gap: 32px 15px;
+    justify-content: space-around;
+
+    @include media-up(md) {
+      grid-template-columns: repeat(6, 80px);
+      gap: 32px 25px;
+    }
+
+    @include media-up(lg) {
+      gap: 32px 60px;
+      justify-content: center;
+    }
+
+    @include media-up(xl) {
+      gap: 32px 80px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 24px;
+    text-align: center;
+
+    @include media-up(md) {
+      margin-bottom: 32px;
+    }
+
+    @include media-up(lg) {
+      margin-bottom: 36px;
+    }
+
+    @include media-up(xxl) {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__buttons {
+    margin-top: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @include media-up(md) {
+      margin-top: 32px;
+    }
+
+    @include media-up(lg) {
+      margin-top: 36px;
+    }
+
+    @include media-up(xxl) {
+      margin-top: 40px;
+    }
+  }
+}

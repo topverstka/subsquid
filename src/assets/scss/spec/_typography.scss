@@ -1,0 +1,66 @@
+h1, .H1 {
+  font-size: 48px;
+  font-weight: 900;
+  line-height: 120%;
+
+  @include media-up(xl) {
+    font-size: 56px;
+  }
+
+  @include media-up(xll) {
+    font-size: 84px;
+  }
+}
+
+h2, .H2 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 130%;
+  letter-spacing: 0.48px;
+
+  @include media-up(md) {
+    font-size: 32px;
+    letter-spacing: 0.64px;
+  }
+
+  @include media-up(lg) {
+    font-size: 36px;
+    letter-spacing: 0.72px;
+  }
+
+  @include media-up(xl) {
+    font-size: 44px;
+    letter-spacing: 0.88px;
+  }
+}
+
+h3, .H3 {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 130%;
+  letter-spacing: 0.4px;
+
+  @include media-up(md) {
+    font-size: 24px;
+    letter-spacing: 0.48px;
+  }
+}
+
+h4, .H4 {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 130%;
+
+  @include media-up(md) {
+    font-size: 24px;
+  }
+}
+
+h5, .H5 {
+
+}
+
+h6, .H6 {
+
+}

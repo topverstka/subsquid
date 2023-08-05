@@ -16,6 +16,16 @@
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.01), 0 11px 9px 0 rgba(0, 0, 0, 0.01);
   user-select: none;
   transition: background-color .2s, color .1s;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: 0.32px;
+
+  &:hover {
+    background: var(--buttons-button-secondary-default, #DCE9FE);
+    color: var(--blue, #3880EC);
+  }
 
   &--second {
     background-color: var(--color-secondary);
@@ -25,4 +35,35 @@
       color: var(--color-black);
     }
   }
+
+  &--infocus {
+    background: var(--buttons-button-secondary-default, #DCE9FE);
+    color: var(--blue, #3880EC);
+
+    &:hover {
+      background-color: var(--color-primary);
+      color: var(--color-white);
+    }
+  }
+
+  &--link {
+    height: 44px;
+    padding: 0 8px;
+    color: var(--buttons-button-default, #3880EC);
+    background: none;
+    box-shadow: none;
+
+    &:hover {
+      background: var(--buttons-button-secondary-default, #DCE9FE);
+      color: var(--blue, #3880EC);
+    }
+  }
+
+  &--single {
+    padding: 0 20px;
+  }
+}
+
+.hidden {
+  display: none !important;
 }

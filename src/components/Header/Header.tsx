@@ -1,25 +1,43 @@
+import * as React from "react";
 import './Header.scss'
 import {Link} from "react-router-dom";
 import logo from "../../assets/images/logo.png";
 import arrow from "../../assets/images/arrow.svg";
 import classNames from "classnames";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 interface HeaderParams {
-    isDark?: boolean
+    isDark?: boolean,
+    coordYDarkEnd?: number
 }
 
 export default function Header(params: HeaderParams) {
     const [isOpenMenu, setOpenMenu] = useState(false)
+    const [isDark, setIsDark] = useState(params.isDark)
 
     function toggleMenu() {
         setOpenMenu(!isOpenMenu)
     }
 
+    useEffect(() => {
+        const Header = document.querySelector('.Header')
+        const HeaderHeight = Header.getBoundingClientRect().height
+
+        if(params.coordYDarkEnd != undefined) {
+            document.addEventListener('scroll', (e) => {
+                if(document.scrollingElement.scrollTop >= (params.coordYDarkEnd - (HeaderHeight / 2))) {
+                    setIsDark(false)
+                } else {
+                    setIsDark(true)
+                }
+            })
+        }
+    })
+
     return (
         <header className={classNames({
             "Header": true,
-            "Header--dark": params.isDark,
+            "Header--dark": isDark,
             "Header--open": isOpenMenu
         })}>
             <div className="Container">
