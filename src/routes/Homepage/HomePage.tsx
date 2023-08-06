@@ -18,11 +18,13 @@ export default function HomePage() {
             <Banner/>
             <div className="Container">
 
-                <Link to="/">home</Link>
-                <Link to="/builders">builders</Link>
-                <Link to="/appchain">appchain</Link>
-                <Link to="/aquarium">aquarium</Link>
-                <Link to="/network">network</Link>
+
+                <h2>Links</h2>
+                <Link to="/">Home</Link><br/>
+                <Link to="/builders">Builders</Link><br/>
+                <Link to="/appchain">Appchain</Link><br/>
+                <Link to="/aquarium">Aquarium</Link><br/>
+                <Link to="/network">Network</Link><br/>
 
                 <div className="HomePage__first-section">
                     <Card>
