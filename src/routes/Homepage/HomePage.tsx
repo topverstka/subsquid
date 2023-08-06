@@ -6,6 +6,8 @@ import Card from "../../components/Card/Card";
 import Gear from "../../assets/images/gear.png";
 import Chains from "../../assets/images/chains.png";
 import "./Homepage.scss";
+import logo from "../../assets/images/logo.png";
+import {Link} from "react-router-dom";
 
 export default function HomePage() {
     document.title = "Subsquid > Home"
@@ -15,6 +17,13 @@ export default function HomePage() {
             <Header isDark={true} coordYDarkEnd={window.innerHeight}/>
             <Banner/>
             <div className="Container">
+
+                <Link to="/">home</Link>
+                <Link to="/builders">builders</Link>
+                <Link to="/appchain">appchain</Link>
+                <Link to="/aquarium">aquarium</Link>
+                <Link to="/network">network</Link>
+
                 <div className="HomePage__first-section">
                     <Card>
                         <div className="HomePage-card">
