@@ -11,7 +11,7 @@ interface HeaderParams {
     coordYDarkEnd?: number
 }
 
-export default function Header(params: HeaderParams) {
+export default function Header(params: HeaderParams = {isDark: false, coordYDarkEnd: 0}) {
     const [isOpenMenu, setOpenMenu] = useState(false)
     const [isDark, setIsDark] = useState(params.isDark)
 
@@ -20,15 +20,19 @@ export default function Header(params: HeaderParams) {
     }
 
     useEffect(() => {
-        const Header = document.querySelector('.Header')
-        const HeaderHeight = Header.getBoundingClientRect().height
+        const Header: Element | null = document.querySelector('.Header')
+        const HeaderHeight: number = Header?.getBoundingClientRect().height || 0
 
         if(params.coordYDarkEnd != undefined) {
             document.addEventListener('scroll', (e) => {
-                if(document.scrollingElement.scrollTop >= (params.coordYDarkEnd - (HeaderHeight / 2))) {
-                    setIsDark(false)
-                } else {
-                    setIsDark(true)
+                if(document.scrollingElement) {
+                    if(params.coordYDarkEnd) {
+                        if(document.scrollingElement.scrollTop >= (params.coordYDarkEnd - (HeaderHeight / 2))) {
+                            setIsDark(false)
+                        } else {
+                            setIsDark(true)
+                        }
+                    }
                 }
             })
         }

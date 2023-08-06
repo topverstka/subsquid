@@ -30,7 +30,7 @@ export default function Table(params: TableParams) {
             <SwiperSlide className="Table-row__item" key={_index} virtualIndex={index}>{_el}</SwiperSlide>))
         return <div className="Table-row" key={index}>
             <p className="Table-row__title">{row.title}</p>
-            <Swiper modules={[Controller, FreeMode]} onSwiper={(s) => setSwipers((_s) => [..._s, s])} spaceBetween={24} allowTouchMove={false} slidesPerView={2.2} slidesPerGroupAuto={true}
+            <Swiper modules={[Controller, FreeMode]} onSwiper={(s) => setSwipers((_s: any) => [..._s, s])} spaceBetween={24} allowTouchMove={false} slidesPerView={2.2} slidesPerGroupAuto={true}
                     className="Table-row__items">{items}</Swiper>
         </div>
     })
@@ -58,7 +58,7 @@ export default function Table(params: TableParams) {
                 </Swiper>
             </div>
             <div>
-                <Swiper modules={[Controller, FreeMode]} onSwiper={(s) => setSwipers((_s) => [..._s, s])} spaceBetween={24} allowTouchMove={false} slidesPerView={2.2} slidesPerGroupAuto={true}
+                <Swiper modules={[Controller, FreeMode]} onSwiper={(s) => setSwipers((_s: any) => [..._s, s])} spaceBetween={24} allowTouchMove={false} slidesPerView={2.2} slidesPerGroupAuto={true}
                         className="Table-header">{headers}</Swiper>
                 <div className="Table-rows">{rows}</div>
             </div>

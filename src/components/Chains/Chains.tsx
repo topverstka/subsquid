@@ -35,7 +35,7 @@ export default function Chains(props: ChainsProps) {
         return 11
     }
 
-    function showAll(e) {
+    function showAll(e: any) {
         e.preventDefault()
 
         const _items: Chain[] = []

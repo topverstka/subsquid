@@ -17,7 +17,7 @@ export function FaqItem(params: FaqItem) {
     const [isOpen, setIsOpen] = useState(false)
     const [height, setHeight] = useState(0)
 
-    function openOrClose(e) {
+    function openOrClose(e: any) {
         const target = e.currentTarget.parentNode
         const mainEl = target.querySelector('.FaqItem__main')
 
