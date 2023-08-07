@@ -1,0 +1,30 @@
+@import "../../assets/scss/spec/mixins";
+
+.List {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+
+  @include media-up(xl) {
+    gap: 24px;
+  }
+
+  &__item {
+    color: var(--black-muted-70, rgba(29, 29, 30, 0.70));
+    font-size: 16px;
+    font-weight: 450;
+    line-height: 150%;
+    letter-spacing: 0.32px;
+    position: relative;
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    gap: 16px;
+
+    &:before {
+      content: url("../../assets/images/arrow-down.svg");
+    }
+  }
+}

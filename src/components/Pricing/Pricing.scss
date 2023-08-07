@@ -1,0 +1,39 @@
+@import "../../assets/scss/spec/mixins";
+
+.Pricing {
+  margin-bottom: 32px;
+
+  @include media-up(md) {
+    margin-bottom: 40px;
+  }
+
+  @include media-up(lg) {
+    margin-bottom: 52px;
+  }
+
+  @include media-up(xl) {
+    margin-bottom: 64px;
+  }
+
+  @include media-up(xxl) {
+    margin-bottom: 80px;
+  }
+
+  &__title {
+    color: var(--black, #1D1D1F);
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  &__wrapper {
+    display: grid;
+    gap: 40px;
+    grid-template-columns: 1fr;
+
+    @include media-up(md) {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr;
+      gap: 32px;
+    }
+  }
+}

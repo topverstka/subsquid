@@ -1,0 +1,38 @@
+@import "../../assets/scss/spec/mixins";
+
+.ListNumber {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  counter-reset: counter;
+
+  @include media-up(xl) {
+    gap: 24px;
+  }
+
+  &__item {
+    counter-increment: counter;
+    color: var(--black-muted-70, rgba(29, 29, 30, 0.70));
+    font-size: 16px;
+    font-weight: 450;
+    line-height: 150%;
+    letter-spacing: 0.32px;
+    position: relative;
+    display: flex;
+
+    b {
+      color: var(--black, #1D1D1F);
+      font-weight: 700;
+    }
+
+    &:before {
+      content: counter(counter) ". ";
+      margin-right: 0.5em;
+      color: var(--black, #1D1D1F);
+      font-weight: 700;
+    }
+  }
+}

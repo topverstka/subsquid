@@ -1,0 +1,71 @@
+@import "../../assets/scss/spec/mixins";
+
+.CardItems {
+  display: grid;
+  gap: 32px;
+  grid-template-columns: 1fr;
+  margin-bottom: 32px;
+
+  @include media-up(md) {
+    margin-bottom: 40px;
+  }
+
+  @include media-up(lg) {
+    margin-bottom: 52px;
+  }
+
+  @include media-up(xl) {
+    margin-bottom: 64px;
+  }
+
+  @include media-up(xxl) {
+    margin-bottom: 80px;
+  }
+}
+
+.CardItem {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 1fr;
+
+  &:not(:last-child) {
+    padding-bottom: 32px;
+    border-bottom: 1px solid rgba(29, 29, 30, 0.10);
+  }
+
+  @include media-up(md) {
+    gap: 16px;
+  }
+
+  @include media-up(lg) {
+    grid-template-columns: 248px 1fr;
+  }
+
+  &__header {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+  }
+
+  &__image {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+  }
+
+  &__title {
+    color: var(--black, #1D1D1F);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 130%;
+  }
+
+  &__text {
+    color: var(--black-muted-70, rgba(29, 29, 30, 0.70));
+    font-size: 16px;
+    font-weight: 450;
+    line-height: 150%;
+    letter-spacing: 0.32px;
+  }
+}

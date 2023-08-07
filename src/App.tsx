@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 import "./App.scss"
 import BuildersPage from "./routes/BuildersPage/BuildersPage";
-import Appchain from "./routes/appchain";
+import AppchainPage from "./routes/AppchainPage/AppchainPage";
 import Aquarium from "./routes/aquarium";
 import HomePage from "./routes/Homepage/HomePage";
 import NetworkPage from "./routes/NetworkPage/NetworkPage";
@@ -23,7 +23,7 @@ const router = createBrowserRouter([
     },
     {
         path: "/appchain",
-        element: <Appchain/>,
+        element: <AppchainPage/>,
     },
     {
         path: "/aquarium",
