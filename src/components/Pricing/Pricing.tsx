@@ -10,7 +10,7 @@ export interface CardItemsProps {
 
 export default function Pricing(props: CardItemsProps) {
     const items = props.items.map((item, index) => {
-        return <CardPrice {...item}/>
+        return <CardPrice key={index} {...item}/>
     })
 
     return (
