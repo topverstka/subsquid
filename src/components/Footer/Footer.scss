@@ -43,6 +43,11 @@
       font-size: 12px;
       font-weight: 450;
       line-height: 150%;
+      transition: .3s;
+
+      &:hover {
+        color: var(--color-primary);
+      }
     }
   }
 
@@ -55,6 +60,14 @@
 
     @include media-up(md) {
       padding: 0;
+    }
+
+    a {
+      transition: .3s;
+
+      &:hover {
+        opacity: 0.5;
+      }
     }
   }
 

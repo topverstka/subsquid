@@ -8,6 +8,8 @@ import "./BuildersPage.scss";
 import Chains from "../../components/Chains/Chains";
 import ChainsData from '../../data/chains'
 import Card from "../../components/Card/Card";
+import PageBanner from "../../components/PageBanner/PageBanner";
+import ListNumber from "../../components/ListNumber/ListNumber";
 
 export default function BuildersPage() {
     document.title = "Subsquid > Builders page"
@@ -139,9 +141,33 @@ export default function BuildersPage() {
             <Header/>
             <Content>
                 <div className="Container">
-                    <Card>
-                        <Chains items={ChainsData} counts={6}/>
-                    </Card>
+                    <PageBanner title='Free, Flexible, & Fast Data Access' text='Squid SDK is a dev-friendly & permissive developer toolkit. Code in TypeScript.' buttons={[
+                        {
+                            text: 'Docs',
+                            href: '#!'
+                        },
+                    ]}/>
+
+                    <Chains items={ChainsData} counts={6}/>
+
+                    <div className="CardsSections">
+                        <Card className="CardsSection">
+                            <h3 className="CardsSection__title">Get started</h3>
+                            <p className="CardsSection__text">Extensive documentation for Squid SDK and the decentralized data lake network</p>
+                            <div className="CardsSection__buttons">
+                                <a href="#!" className="Button">Docs</a>
+                            </div>
+                        </Card>
+
+                        <Card className="CardsSection">
+                            <h3 className="CardsSection__title">Don’t want to self-host?</h3>
+                            <p className="CardsSection__text">We’ve got you covered. Explore our enterprise-grade hosted service, Aquarium</p>
+                            <div className="CardsSection__buttons">
+                                <a href="#!" className="Button">Learn more</a>
+                            </div>
+                        </Card>
+                    </div>
+
                     <Table rows={tableParams.rows} headers={tableParams.headers}/>
                 </div>
             </Content>

@@ -2,6 +2,10 @@
   font-family: 'Circular Std', sans-serif;
 }
 
+body {
+  background: var(--background, #F6F8FB);
+}
+
 .Container {
   max-width: 1290px + (16px * 2);
   width: 100%;
@@ -12,8 +16,8 @@
 .Button {
   display: inline-flex;
   align-items: center;
-  height: 36px;
-  padding: 0 16px;
+  height: 44px;
+  padding: 14px 20px;
   background-color: var(--color-primary);
   color: var(--color-white);
   border-radius: 4px;

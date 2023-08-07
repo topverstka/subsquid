@@ -7,7 +7,7 @@ import {
 import "./App.scss"
 import BuildersPage from "./routes/BuildersPage/BuildersPage";
 import AppchainPage from "./routes/AppchainPage/AppchainPage";
-import Aquarium from "./routes/aquarium";
+import AquariumPage from "./routes/AquariumPage/AquariumPage";
 import HomePage from "./routes/Homepage/HomePage";
 import NetworkPage from "./routes/NetworkPage/NetworkPage";
 
@@ -27,7 +27,7 @@ const router = createBrowserRouter([
     },
     {
         path: "/aquarium",
-        element: <Aquarium/>,
+        element: <AquariumPage/>,
     },
     {
         path: "/network",

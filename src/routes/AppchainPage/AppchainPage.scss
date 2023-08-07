@@ -1,6 +1,6 @@
 @import "../../assets/scss/spec/mixins";
 
-.AppchainSections {
+.CardsSections {
   display: grid;
   grid-template-columns: 1fr;
   gap: 32px;
@@ -28,13 +28,39 @@
   }
 }
 
-.AppchainSection {
+.CardsSection {
   display: flex;
   flex-direction: column;
 
   &__title {
     margin-bottom: 16px;
     text-align: center;
+
+    @include media-up(lg) {
+      margin-bottom: 24px;
+    }
+
+    @include media-up(xxl) {
+      margin-bottom: 32px;
+    }
+  }
+
+  &__text {
+    color: var(--black-muted-70, rgba(29, 29, 30, 0.70));
+    text-align: center;
+    font-size: 16px;
+    font-weight: 450;
+    line-height: 150%;
+    letter-spacing: 0.32px;
+    margin-bottom: 24px;
+
+    @include media-up(lg) {
+      margin-bottom: 32px;
+    }
+
+    @include media-up(xxl) {
+      margin-bottom: 36px;
+    }
   }
 
   .ListNumber {

@@ -5,6 +5,8 @@ import Footer from "../../components/Footer/Footer";
 import Card from "../../components/Card/Card";
 import "./NetworkPage.scss";
 import Roadmap from "../../components/Roadmap/Roadmap";
+import PageBanner from "../../components/PageBanner/PageBanner";
+import * as React from "react";
 
 
 export default function NetworkPage() {
@@ -70,6 +72,18 @@ export default function NetworkPage() {
             <Header/>
             <Content>
                 <div className="Container">
+                    <PageBanner title='Decentralized Data Lake Protocol' subtitle='Subsquid network' text='All of Web3 data, all in one place. Peer-to-peer, without rate limits, for free.' buttons={[
+                        {
+                            text: 'Run a node',
+                            href: '#!',
+                            type: 'second'
+                        },
+                        {
+                            text: 'Launch app',
+                            href: '#!'
+                        }
+                    ]}/>
+
                     <div className="NetworkPage__sections">
                         <Card className="NetworkPage__section">
                             <h2 className="NetworkPage__title">Roadmap</h2>

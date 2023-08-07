@@ -30,6 +30,7 @@
     font-weight: 900;
     line-height: 120%;
     margin-bottom: 8px;
+    white-space: pre-line;
 
     @include media-up(xl) {
       font-size: 32px;
@@ -43,6 +44,7 @@
 
   &__title {
     margin-bottom: 16px;
+    white-space: pre-line;
 
     @include media-up(xl) {
       margin-bottom: 24px;
@@ -56,9 +58,20 @@
     line-height: 180%;
     letter-spacing: 0.32px;
     margin-bottom: 32px;
+    white-space: pre-line;
 
     @include media-up(xl) {
       font-size: 20px;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    @include media-up(md) {
+      justify-content: center;
     }
   }
 }

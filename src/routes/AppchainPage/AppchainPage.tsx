@@ -86,20 +86,20 @@ export default function AppchainPage() {
                         }
                     ]}/>
 
-                    <div className="AppchainSections">
-                        <Card className="AppchainSection">
-                            <h3 className="AppchainSection__title">How it works?</h3>
+                    <div className="CardsSections">
+                        <Card className="CardsSection">
+                            <h3 className="CardsSection__title">How it works?</h3>
                             <ListNumber items={[
                                 <span><b>Contact</b> our team</span>,
                                 <span>Fill out a simple form & sign <b>SLA</b></span>,
                                 <span><b>Wait 2-3 days</b> for the chain to be added to the Subsquid data lake</span>,
                             ]}/>
-                            <div className="AppchainSection__buttons">
+                            <div className="CardsSection__buttons">
                                 <a href="#!" className="Button ">Onboard your chain</a>
                             </div>
                         </Card>
-                        <Card className="AppchainSection" type={CardType.secondary}>
-                            <h3 className="AppchainSection__title">Use cases</h3>
+                        <Card className="CardsSection" type={CardType.secondary}>
+                            <h3 className="CardsSection__title">Use cases</h3>
                             <List items={[
                                 'Real-time dApp backends (e.g. games)',
                                 'Wallets',

@@ -3,6 +3,7 @@ import './Chains.scss'
 import {Chain} from '../../data/chains'
 import {useEffect, useState} from "react";
 import classNames from "classnames";
+import Card from "../Card/Card";
 
 interface ChainsProps {
     items: Chain[],
@@ -49,20 +50,22 @@ export default function Chains(props: ChainsProps) {
     }
 
     return (
-        <div className="Chains">
-            <h2 className="Chains__title">Support for 100+ chains</h2>
-            <div className="Chains__items">{items.map((item, index) => (
-                <ChainItem key={index} title={item.title} image={item.image}
-                           visible={item.visible || false}></ChainItem>
-            ))}</div>
-            <div className="Chains__buttons">
-                <button className={classNames({
-                    'Button': true,
-                    'Button--link': true,
-                    'Button--single': true,
-                    'hidden': !isButtonShow
-                })} onClick={showAll}>Show all</button>
+        <Card className="Chains">
+            <div className="Chains__wrapper">
+                <h2 className="Chains__title">Support for 100+ chains</h2>
+                <div className="Chains__items">{items.map((item, index) => (
+                    <ChainItem key={index} title={item.title} image={item.image}
+                               visible={item.visible || false}></ChainItem>
+                ))}</div>
+                <div className="Chains__buttons">
+                    <button className={classNames({
+                        'Button': true,
+                        'Button--link': true,
+                        'Button--single': true,
+                        'hidden': !isButtonShow
+                    })} onClick={showAll}>Show all</button>
+                </div>
             </div>
-        </div>
+        </Card>
     )
 }
