@@ -116,7 +116,7 @@ export default function Header(params: HeaderParams = {isDark: false, coordYDark
         }
     })
 
-    function createLink(title, link, index, isTopLevel = false) {
+    function createLink(title: string, link: string, index: number, isTopLevel: boolean = false) {
         return <a href={link} className={classNames({
             'HeaderLinkItem': true,
             'HeaderLinkItem--top': isTopLevel

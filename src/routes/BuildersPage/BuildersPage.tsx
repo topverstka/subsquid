@@ -7,9 +7,8 @@ import IndicatorTable, {TypeIndicatorTable} from "../../components/Table/Indicat
 import "./BuildersPage.scss";
 import Chains from "../../components/Chains/Chains";
 import ChainsData from '../../data/chains'
-import Card from "../../components/Card/Card";
+import Card, {CardType} from "../../components/Card/Card";
 import PageBanner from "../../components/PageBanner/PageBanner";
-import ListNumber from "../../components/ListNumber/ListNumber";
 
 export default function BuildersPage() {
     document.title = "Subsquid > Builders page"
@@ -148,7 +147,7 @@ export default function BuildersPage() {
                         },
                     ]}/>
 
-                    <Chains items={ChainsData} counts={6}/>
+                    <Chains title="test" type={CardType.primary} items={ChainsData} counts={6}/>
 
                     <div className="CardsSections">
                         <Card className="CardsSection">

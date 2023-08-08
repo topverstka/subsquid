@@ -1,6 +1,7 @@
 import * as React from "react";
 import "./Section.scss"
 import classNames from "classnames";
+import {ReactNode} from "react";
 
 export enum SectionType {
     row = "row",
@@ -13,7 +14,7 @@ export enum SectionGap {
 export interface SectionProps {
     type?: SectionType
     gap?: SectionGap
-    children?: HTMLCollection
+    children?: ReactNode | undefined
 }
 
 export default function Section(props: SectionProps) {

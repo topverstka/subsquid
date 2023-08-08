@@ -35,8 +35,8 @@ export default function Chains(props: ChainsProps) {
     }))
     const [isButtonShow, setIsButtonShow] = useState(true)
 
-    function getCounts() {
-        if (isLimit) return props.limit
+    function getCounts(): number {
+        if (isLimit) return props.limit || 5
 
         if (window.innerWidth < 768) return 5
         return 11
