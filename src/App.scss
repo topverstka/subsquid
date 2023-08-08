@@ -1,3 +1,5 @@
+@import "./assets/scss/spec/mixins";
+
 * {
   font-family: 'Circular Std', sans-serif;
 }
@@ -7,21 +9,28 @@ body {
 }
 
 .Container {
-  max-width: 1290px + (16px * 2);
+  max-width: 1224px + (28px * 2);
   width: 100%;
   margin: 0 auto;
   padding: 0 16px;
+
+  @include media-up(md) {
+    padding: 0 24px;
+  }
+
+  @include media-up(lg) {
+    padding: 0 28px;
+  }
 }
 
-.Button {
+input[type="button"], input[type="reset"], input[type="submit"], button, .Button {
   display: inline-flex;
   align-items: center;
   height: 44px;
   padding: 14px 20px;
   background-color: var(--color-primary);
-  color: var(--color-white);
+  color: var(--white, #F9F9F9);
   border-radius: 4px;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.01), 0 11px 9px 0 rgba(0, 0, 0, 0.01);
   user-select: none;
   transition: background-color .2s, color .1s;
   text-align: center;
@@ -29,18 +38,24 @@ body {
   font-weight: 500;
   line-height: 100%;
   letter-spacing: 0.32px;
+  font-feature-settings: 'clig' off, 'liga' off;
 
   &:hover {
-    background: var(--buttons-button-secondary-default, #DCE9FE);
-    color: var(--blue, #3880EC);
+    background: var(--buttons-button-hover, #3270CD);
   }
 
+  &:active {
+    background: var(--buttons-button-pressed, #285AA6);
+  }
+}
+
+.Button {
   &--second {
-    background-color: var(--color-secondary);
+    background: var(--orange, #FF6C2E);
 
     &:hover {
-      background-color: var(--grey-button-hover);
-      color: var(--color-black);
+      background: var(--grey-navbar-button-hover, #E1E2E3);
+      color: var(--black, #1D1D1F);
     }
   }
 
@@ -48,9 +63,13 @@ body {
     background: var(--buttons-button-secondary-default, #DCE9FE);
     color: var(--blue, #3880EC);
 
+
     &:hover {
-      background-color: var(--color-primary);
-      color: var(--color-white);
+      background: var(--buttons-button-secondary-hover, #C6D9F6);
+    }
+
+    &:active {
+      background: var(--buttons-button-secondary-pressed, #ABCCFF);
     }
   }
 
@@ -59,11 +78,15 @@ body {
     padding: 0 8px;
     color: var(--buttons-button-default, #3880EC);
     background: none;
-    box-shadow: none;
 
     &:hover {
-      background: var(--buttons-button-secondary-default, #DCE9FE);
-      color: var(--blue, #3880EC);
+      background: none;
+      color: var(--buttons-button-hover, #3270CD);
+    }
+
+    &:active {
+      background: none;
+      color: var(--buttons-button-pressed, #285AA6);
     }
   }
 

@@ -1,8 +1,9 @@
 @import "../../assets/scss/spec/mixins";
 
 .PageBanner {
+  $root: &;
   padding-top: 24px;
-  padding-bottom: 40px;
+  margin-bottom: 40px;
 
   @include media-up(md) {
     text-align: center;
@@ -11,12 +12,20 @@
 
   @include media-up(lg) {
     padding-top: 80px;
-    padding-bottom: 80px;
+    margin-bottom: 80px;
   }
 
   @include media-up(xl) {
     padding-top: 100px;
-    padding-bottom: 100px;
+    margin-bottom: 100px;
+
+    &--image {
+      display: grid;
+      text-align: left;
+      grid-template-columns: 1fr 604px;
+      gap: 0 56px;
+      align-items: center;
+    }
   }
 
   @include media-up(xxl) {
@@ -72,6 +81,27 @@
 
     @include media-up(md) {
       justify-content: center;
+    }
+  }
+
+  &__image {
+    max-width: 842px;
+    width: 100%;
+    display: table;
+    margin: 40px auto 0 auto;
+
+    @include media-up(xl) {
+      margin: 0;
+    }
+  }
+
+  &--image {
+    #{$root} {
+      &__buttons {
+        @include media-up(xl) {
+          justify-content: flex-start;
+        }
+      }
     }
   }
 }

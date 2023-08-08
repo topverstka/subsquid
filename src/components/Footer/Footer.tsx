@@ -15,11 +15,11 @@ export default function Footer() {
                     </div>
                     <div className="Footer__logos">
                         <div className="Footer__logo">
-                            <img src={powered} alt=""/>
-                            <a href="#!"><img src={Polygon} alt=""/></a>
+                            <img className="Footer__item-powered" src={powered} alt=""/>
+                            <a href="#!"><img className="Footer__item-polygon" src={Polygon} alt=""/></a>
                         </div>
-                        <a href="#!"><img src={GCloud} alt=""/></a>
-                        <a href="#!"><img src={Substrabe} alt=""/></a>
+                        <a href="#!"><img className="Footer__item-gcloud" src={GCloud} alt=""/></a>
+                        <a href="#!"><img className="Footer__item-substrabe" src={Substrabe} alt=""/></a>
                     </div>
                 </div>
             </div>

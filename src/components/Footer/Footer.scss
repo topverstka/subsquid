@@ -25,10 +25,12 @@
     display: flex;
     flex-direction: column;
     gap: 12px;
+    padding-bottom: 12px;
 
     @include media-up(md) {
       flex-direction: row;
       align-items: center;
+      padding-bottom: 0;
     }
 
     p {
@@ -46,7 +48,7 @@
       transition: .3s;
 
       &:hover {
-        color: var(--color-primary);
+        opacity: 0.7;
       }
     }
   }
@@ -66,7 +68,7 @@
       transition: .3s;
 
       &:hover {
-        opacity: 0.5;
+        opacity: 0.7;
       }
     }
   }
@@ -75,5 +77,41 @@
     display: flex;
     align-items: center;
     gap: 10px;
+  }
+
+  &__item-powered {
+    width: 52px;
+    object-fit: contain;
+
+    @include media-up(xl) {
+      width: 70px;
+    }
+  }
+
+  &__item-polygon {
+    width: 46px;
+    object-fit: contain;
+
+    @include media-up(xl) {
+      width: 63px;
+    }
+  }
+
+  &__item-gcloud {
+    width: 72px;
+    object-fit: contain;
+
+    @include media-up(xl) {
+      width: 98px;
+    }
+  }
+
+  &__item-substrabe {
+    width: 52px;
+    object-fit: contain;
+
+    @include media-up(xl) {
+      width: 72px;
+    }
   }
 }

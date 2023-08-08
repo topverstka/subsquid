@@ -1,6 +1,12 @@
 import * as React from "react";
 import "./CardItems.scss"
 import Card, {CardType} from "../Card/Card";
+import classNames from "classnames";
+
+export enum CardItemsType {
+    row= 'row',
+    column = 'column'
+}
 
 export interface CardItem {
     image: string
@@ -10,6 +16,7 @@ export interface CardItem {
 
 export interface CardItemsProps {
     items: CardItem[]
+    type: CardItemsType
 }
 
 export default function CardItems(props: CardItemsProps) {
@@ -25,6 +32,11 @@ export default function CardItems(props: CardItemsProps) {
     })
 
     return (
-        <Card className="CardItems" type={CardType.secondary}>{items}</Card>
+        <Card className={
+            classNames({
+                'CardItems': true,
+                ['CardItems--' + props.type]: true
+            })
+        } type={CardType.secondary}>{items}</Card>
     );
 }

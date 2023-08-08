@@ -1,0 +1,50 @@
+@import "../../assets/scss/spec/mixins";
+
+.Promo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  @include media-up(md) {
+    padding: 40px 24px;
+  }
+
+  @include media-up(md) {
+    flex-direction: row;
+  }
+
+  img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+
+    @include media-up(md) {
+      margin-right: 16px;
+    }
+
+    @include media-up(xl) {
+      width: 32px;
+      height: 32px;
+      margin-right: 24px;
+    }
+  }
+
+  p {
+    color: var(--black, #1D1D1F);
+    text-align: center;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+    margin-top: 16px;
+
+    @include media-up(md) {
+      margin-top: 0;
+    }
+
+    @include media-up(xl) {
+      font-size: 20px;
+    }
+  }
+}

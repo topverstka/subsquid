@@ -1,0 +1,78 @@
+@import "../../assets/scss/spec/mixins";
+
+.CardCounters {
+  $root: &;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  align-self: stretch;
+  text-align: center;
+
+  @include media-up(md) {
+    gap: 32px;
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 48px;
+
+    @include media-up(md) {
+      grid-template-columns: repeat(3, min-content);
+      padding-top: 0;
+      gap: 0 80px;
+      justify-content: center;
+    }
+
+    @include media-up(lg) {
+      gap: 0 120px;
+    }
+
+    @include media-up(xl) {
+      gap: 0 160px;
+    }
+  }
+}
+
+.CardCountersItem {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: 1fr;
+  position: relative;
+
+  &:not(:last-child) {
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: -24px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 1px;
+      background: rgba(29, 29, 30, 0.10);
+
+      @include media-up(md) {
+        width: 1px;
+        height: 40px;
+        transform: translateY(-50%);
+        top: 50%;
+        left: auto;
+        right: -40px;
+      }
+    }
+  }
+
+  &__title {
+    color: var(--black, #1D1D1F);
+    margin: 0;
+  }
+
+  &__text {
+    color: var(--black-muted-70, rgba(29, 29, 30, 0.70));
+    font-size: 16px;
+    font-weight: 450;
+    line-height: 150%;
+    letter-spacing: 0.32px;
+    white-space: nowrap;
+  }
+}

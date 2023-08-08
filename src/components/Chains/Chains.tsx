@@ -1,14 +1,17 @@
 import * as React from "react";
+import {useState} from "react";
 import './Chains.scss'
 import {Chain} from '../../data/chains'
-import {useEffect, useState} from "react";
 import classNames from "classnames";
-import Card from "../Card/Card";
+import Card, {CardType} from "../Card/Card";
 
 interface ChainsProps {
     items: Chain[],
+    title: string
+    type: CardType
     countsMobile?: number,
     counts?: number,
+    limit?: number
 }
 
 export function ChainItem(item: Chain) {
@@ -25,14 +28,17 @@ export function ChainItem(item: Chain) {
 }
 
 export default function Chains(props: ChainsProps) {
+    const isLimit = !!props.limit
     const [items, setItems] = useState(props.items.map((item, index) => {
         item.visible = index <= getCounts()
         return item
     }))
     const [isButtonShow, setIsButtonShow] = useState(true)
 
-    function getCounts () {
-        if(window.innerWidth < 768) return 5
+    function getCounts() {
+        if (isLimit) return props.limit
+
+        if (window.innerWidth < 768) return 5
         return 11
     }
 
@@ -50,20 +56,22 @@ export default function Chains(props: ChainsProps) {
     }
 
     return (
-        <Card className="Chains">
+        <Card className="Chains" type={props.type}>
             <div className="Chains__wrapper">
-                <h2 className="Chains__title">Support for 100+ chains</h2>
+                <h2 className="Chains__title">{props.title}</h2>
                 <div className="Chains__items">{items.map((item, index) => (
                     <ChainItem key={index} title={item.title} image={item.image}
                                visible={item.visible || false}></ChainItem>
                 ))}</div>
                 <div className="Chains__buttons">
-                    <button className={classNames({
-                        'Button': true,
-                        'Button--link': true,
-                        'Button--single': true,
-                        'hidden': !isButtonShow
-                    })} onClick={showAll}>Show all</button>
+                    {!isLimit ?
+                        <button className={classNames({
+                            'Button': true,
+                            'Button--link': true,
+                            'Button--single': true,
+                            'hidden': !isButtonShow
+                        })} onClick={showAll}>Show all</button>
+                        : <p className="Chains__limit">& many more</p>}
                 </div>
             </div>
         </Card>

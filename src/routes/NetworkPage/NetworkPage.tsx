@@ -15,27 +15,44 @@ export default function NetworkPage() {
     const FaqItems = [
         {
             title: "What is Subsquid network?",
-            content: <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi cumque deserunt dolore dolorem
-                enim laborum laudantium nulla perferendis provident, voluptatibus? Aliquid cum debitis ea fugiat iste,
-                maiores nesciunt officiis quia?</p>
+            content: <p>Subsquid Network is a decentralized data lake focused on making blockchain data accessible,
+                regardless of scale. It employs a state-of-the-art data compression and a lightweight querying engine
+                that enables cost-efficient access to on-chain data. As of the current release of the testnet, the
+                querying engine is being decentralized through a network of worker nodes that contribute storage and
+                compute resources to the network, in order to serve the data in a peer to peer fashion to consumers.</p>
         },
         {
             title: "How can I participate in the network?",
-            content: <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi cumque deserunt dolore dolorem
-                enim laborum laudantium nulla perferendis provident, voluptatibus? Aliquid cum debitis ea fugiat iste,
-                maiores nesciunt officiis quia?</p>
+            content: <p>As of the Mirovia release (June 2023), it is possible to provide infrastructure by running a
+                worker node instance. Workers contribute storage and compute resources to the network and are rewarded
+                with $SQD tokens.
+                Fill out <a href="#!">this form</a> in order to get onboarded.</p>
         },
         {
             title: "What are the hardware requirements?",
-            content: <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi cumque deserunt dolore dolorem
-                enim laborum laudantium nulla perferendis provident, voluptatibus? Aliquid cum debitis ea fugiat iste,
-                maiores nesciunt officiis quia?</p>
+            content: <>
+                <p>To run a single worker you will need:</p>
+                <ul>
+                    <li>4 vCPU I 8GB RAM I 1TB SSD</li>
+                    <li>public IP and one port open for incoming TCP traffic (default is 12345, but can be changed)</li>
+                    <li>100_000 tSQD tokens</li>
+                    <li>Some AGOR (Arbitrum Goerli)</li>
+                </ul>
+                <p>There are two options to run the worker:</p>
+                <ul>
+                    <li>using Docker</li>
+                    <li>from sources</li>
+                </ul>
+                <p>Please refer to this <a href="#!">wiki</a> for further instructions. A single account can register
+                    multiple workers.</p>
+            </>
         },
         {
             title: "I can’t code. How do I join?",
-            content: <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi cumque deserunt dolore dolorem
-                enim laborum laudantium nulla perferendis provident, voluptatibus? Aliquid cum debitis ea fugiat iste,
-                maiores nesciunt officiis quia?</p>
+            content: <p>As a non-coder, you will be able to participate in the Subsquid Network directly by delegating
+                $SQD tokens to reliable workers to receive a percentage of the reward.
+                Additionally you can drive the growth of the Subsquid Network by helping to cultivate a vibrant
+                community, amplifying the network's reach through social media and other platforms.</p>
         }
     ]
     const RoadmapItems = [
@@ -72,17 +89,19 @@ export default function NetworkPage() {
             <Header/>
             <Content>
                 <div className="Container">
-                    <PageBanner title='Decentralized Data Lake Protocol' subtitle='Subsquid network' text='All of Web3 data, all in one place. Peer-to-peer, without rate limits, for free.' buttons={[
-                        {
-                            text: 'Run a node',
-                            href: '#!',
-                            type: 'second'
-                        },
-                        {
-                            text: 'Launch app',
-                            href: '#!'
-                        }
-                    ]}/>
+                    <PageBanner title='Decentralized Data Lake Protocol' subtitle='Subsquid network'
+                                text='All of Web3 data, all in one place. Peer-to-peer, without rate limits, for free.'
+                                buttons={[
+                                    {
+                                        text: 'Run a node',
+                                        href: '#!',
+                                        type: 'second'
+                                    },
+                                    {
+                                        text: 'Launch app',
+                                        href: '#!'
+                                    }
+                                ]}/>
 
                     <div className="NetworkPage__sections">
                         <Card className="NetworkPage__section">

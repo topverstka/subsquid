@@ -1,25 +1,40 @@
 @import "../../assets/scss/spec/mixins";
 
 .CardItems {
+  $root: &;
   display: grid;
   gap: 32px;
   grid-template-columns: 1fr;
-  margin-bottom: 32px;
 
-  @include media-up(md) {
-    margin-bottom: 40px;
-  }
+  &--column {
+    @include media-up(lg) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0 80px;
+    }
 
-  @include media-up(lg) {
-    margin-bottom: 52px;
-  }
+    .CardItem {
+      @include media-up(lg) {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        position: relative;
 
-  @include media-up(xl) {
-    margin-bottom: 64px;
-  }
+        &:not(:last-child) {
+          padding-bottom: 0;
+          border-bottom: none;
 
-  @include media-up(xxl) {
-    margin-bottom: 80px;
+          &:after {
+            content: "";
+            background: rgba(29, 29, 30, 0.10);
+            width: 1px;
+            height: 40px;
+            position: absolute;
+            right: -40px;
+            top: 50%;
+            transform: translateY(-50%);
+          }
+        }
+      }
+    }
   }
 }
 

@@ -28,24 +28,6 @@
 }
 
 .Chains {
-  margin-bottom: 32px;
-
-  @include media-up(md) {
-    margin-bottom: 40px;
-  }
-
-  @include media-up(lg) {
-    margin-bottom: 52px;
-  }
-
-  @include media-up(xl) {
-    margin-bottom: 64px;
-  }
-
-  @include media-up(xxl) {
-    margin-bottom: 80px;
-  }
-
   &__items {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -102,5 +84,13 @@
     @include media-up(xxl) {
       margin-top: 40px;
     }
+  }
+
+  &__limit {
+    color: var(--black-muted-70, rgba(29, 29, 30, 0.70));
+    font-size: 16px;
+    font-weight: 450;
+    line-height: 150%;
+    letter-spacing: 0.32px;
   }
 }
