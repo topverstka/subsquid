@@ -39,3 +39,41 @@
     justify-content: center;
   }
 }
+
+.NetworkPageCard {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 1fr;
+
+  @include media-up(md) {
+    gap: 16px;
+  }
+
+  &__header {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: auto 1fr;
+    align-items: self-end;
+  }
+
+  &__image {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+  }
+
+  &__title {
+    color: var(--black, #1D1D1F);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 130%;
+  }
+
+  &__text {
+    color: var(--black-muted-70, rgba(29, 29, 30, 0.70));
+    font-size: 16px;
+    font-weight: 450;
+    line-height: 150%;
+    letter-spacing: 0.32px;
+  }
+}

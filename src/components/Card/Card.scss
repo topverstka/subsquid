@@ -1,8 +1,8 @@
 @import "../../assets/scss/spec/mixins";
 
 .Card {
-  border-radius: 12px;
-  background: var(--white-cards, #FFF);
+  border-radius: 4px;
+  background: var(--white, #FFF);
   box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.04), 0 0 2px 0 rgba(0, 0, 0, 0.12);
   padding: 32px 24px;
 

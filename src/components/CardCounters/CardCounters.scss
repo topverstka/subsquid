@@ -18,7 +18,7 @@
     gap: 48px;
 
     @include media-up(md) {
-      grid-template-columns: repeat(3, min-content);
+      grid-template-columns: repeat(3, auto);
       padding-top: 0;
       gap: 0 80px;
       justify-content: center;
@@ -65,6 +65,10 @@
   &__title {
     color: var(--black, #1D1D1F);
     margin: 0;
+  }
+
+  &__link {
+    margin: 0 auto;
   }
 
   &__text {

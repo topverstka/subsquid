@@ -25,6 +25,24 @@
   &__main {
     overflow: hidden;
     transition: height .3s, margin .3s;
+    color: var(--black-muted-70, rgba(29, 29, 30, 0.70));
+    font-size: 16px;
+    font-weight: 450;
+    line-height: 150%;
+
+    a {
+      color: var(--blue, #3880EC);
+    }
+
+    ul {
+      list-style: disc;
+      margin: 0;
+      padding-left: 24px;
+
+      &:not(:last-child) {
+        margin-bottom: 1em;
+      }
+    }
   }
 
   &__chevron {

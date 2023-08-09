@@ -2,11 +2,14 @@ import Header from "../../components/Header/Header";
 import Content from "../../components/Content/Content";
 import Faq from "../../components/Faq/Faq";
 import Footer from "../../components/Footer/Footer";
-import Card from "../../components/Card/Card";
+import Card, {CardType} from "../../components/Card/Card";
 import "./NetworkPage.scss";
 import Roadmap from "../../components/Roadmap/Roadmap";
 import PageBanner from "../../components/PageBanner/PageBanner";
 import * as React from "react";
+import Section, {SectionGap} from "../../components/Section/Section";
+import ZapImg from "../../assets/images/water.png";
+import CardLinks from "../../components/CardLinks/CardLinks";
 
 
 export default function NetworkPage() {
@@ -103,19 +106,57 @@ export default function NetworkPage() {
                                     }
                                 ]}/>
 
-                    <div className="NetworkPage__sections">
-                        <Card className="NetworkPage__section">
-                            <h2 className="NetworkPage__title">Roadmap</h2>
-                            <Roadmap items={RoadmapItems}/>
-                        </Card>
-                        <Card className="NetworkPage__section">
-                            <h2 className="NetworkPage__title">FAQ</h2>
-                            <Faq items={FaqItems}></Faq>
-                            <div className="NetworkPage__buttons">
-                                <a href="#!" className="Button Button--link">View full FAQ</a>
+                    <Section gap={SectionGap.g32}>
+                        <Card type={CardType.primary}>
+                            <div className="NetworkPageCard">
+                                <div className="NetworkPageCard__header">
+                                    <img className="NetworkPageCard__image" src={ZapImg} alt=""/>
+                                    <p className="NetworkPageCard__title">What we’re building</p>
+                                </div>
+
+                                <p className="NetworkPageCard__text">Imagine if any amount of blockchain data could be accessed by anybody, without middlemen. What if this could be done fast (up to 150k blocks/s) and at no charge to developers!</p>
+                                <p className="NetworkPageCard__text">That’s what the Subsquid decentralized data lake is for. </p>
                             </div>
                         </Card>
-                    </div>
+
+                        <CardLinks items={[
+                            {
+                                title: "Node runners",
+                                link: {
+                                    text: "Onboarding form",
+                                    link: "#!"
+                                }
+                            },
+                            {
+                                title: "Instructions",
+                                link: {
+                                    text: "GitHub Repo",
+                                    link: "#!"
+                                }
+                            },
+                            {
+                                title: "Community",
+                                link: {
+                                    text: "Join our Discord",
+                                    link: "#!"
+                                }
+                            }
+                        ]}/>
+
+                        <div className="NetworkPage__sections">
+                            <Card className="NetworkPage__section">
+                                <h2 className="NetworkPage__title">Roadmap</h2>
+                                <Roadmap items={RoadmapItems}/>
+                            </Card>
+                            <Card className="NetworkPage__section">
+                                <h2 className="NetworkPage__title">FAQ</h2>
+                                <Faq items={FaqItems}></Faq>
+                                <div className="NetworkPage__buttons">
+                                    <a href="#!" className="Button Button--link">View full FAQ</a>
+                                </div>
+                            </Card>
+                        </div>
+                    </Section>
                 </div>
             </Content>
             <Footer/>

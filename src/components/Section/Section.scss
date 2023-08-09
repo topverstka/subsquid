@@ -30,5 +30,17 @@
     @include media-up(md) {
       gap: 40px 32px;
     }
+
+    @include media-up(lg) {
+      gap: 52px 32px;
+    }
+
+    @include media-up(xl) {
+      gap: 64px 32px;
+    }
+
+    @include media-up(xxl) {
+      gap: 80px 32px;
+    }
   }
 }
