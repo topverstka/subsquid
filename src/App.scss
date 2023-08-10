@@ -98,3 +98,31 @@ input[type="button"], input[type="reset"], input[type="submit"], button, .Button
 .hidden {
   display: none !important;
 }
+
+.form-email {
+  display: flex;
+
+  label {
+    width: 100%;
+    display: flex;
+    height: 64px;
+    padding: 8px 8px 8px 24px;
+    align-items: center;
+    gap: 12px;
+    align-self: stretch;
+    border-radius: 4px;
+    background: var(--white-cards, #FFF);
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.04), 0 0 2px 0 rgba(0, 0, 0, 0.12);
+  }
+
+  input {
+    font-size: 17px;
+    font-weight: 450;
+    line-height: 160%;
+    letter-spacing: 0.34px;
+
+    &::placeholder {
+      color: var(--black-muted-30, rgba(29, 29, 31, 0.30));
+    }
+  }
+}

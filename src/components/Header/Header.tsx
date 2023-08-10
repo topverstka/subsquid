@@ -2,7 +2,6 @@ import * as React from "react";
 import './Header.scss'
 import {Link} from "react-router-dom";
 import logo from "../../assets/images/logo.png";
-import arrow from "../../assets/images/arrow.svg";
 import classNames from "classnames";
 import {useEffect, useState} from "react";
 
@@ -44,12 +43,12 @@ const MenuData: MenuItem[] = [
                     {
                         title: 'Squid SDK',
                         text: 'Web3’s most powerful indexing tookkit. >100x faster than the Graph and endless possibilities.',
-                        link: "#!"
+                        link: "/builders"
                     },
                     {
                         title: 'Aquarium: hosted service',
                         text: 'Instant deployment of blockchain APIs and sophisticated data pipelines.',
-                        link: "#!"
+                        link: "/aquarium"
                     }
                 ]
             },
@@ -59,7 +58,7 @@ const MenuData: MenuItem[] = [
                     {
                         title: 'Onboarding service',
                         text: 'Join Subsquid Network to empower developers on your chain with unlimited free data access.',
-                        link: "#!"
+                        link: "/appchain"
                     }
                 ]
             }
@@ -67,16 +66,7 @@ const MenuData: MenuItem[] = [
     },
     {
         title: 'Network',
-        links: [
-            {
-                title: 'Overview',
-                link: "#!"
-            },
-            {
-                title: 'Status',
-                link: "#!"
-            },
-        ]
+        link: "/network"
     },
     {
         title: "Docs",
@@ -117,7 +107,7 @@ export default function Header(params: HeaderParams = {isDark: false, coordYDark
     })
 
     function createLink(title: string, link: string, index: number, isTopLevel: boolean = false) {
-        return <a href={link} className={classNames({
+        return <Link to={link} className={classNames({
             'HeaderLinkItem': true,
             'HeaderLinkItem--top': isTopLevel
         })} key={index}>
@@ -126,17 +116,17 @@ export default function Header(params: HeaderParams = {isDark: false, coordYDark
                 <path d="M3.33398 8H12.6673" stroke="currentColor"/>
                 <path d="M8 3.33331L12.6667 7.99998L8 12.6666" stroke="currentColor"/>
             </svg>
-        </a>
+        </Link>
     }
 
     function createItemsLink(title: string, items: MenuItemItemsItem[], index: number) {
         return <div className="HeaderItemsLink" key={index}>
             <span className="HeaderItemsLink__title">{title}</span>
             <div className="HeaderItemsLink__items">
-                {items.map((item, i) => (<a key={i} href={item.link} className="HeaderItemsLinkItem">
+                {items.map((item, i) => (<Link key={i} to={item.link} className="HeaderItemsLinkItem">
                     <span className="HeaderItemsLinkItem__title">{item.title}</span>
                     <span className="HeaderItemsLinkItem__text">{item.text}</span>
-                </a>))}
+                </Link>))}
             </div>
         </div>
     }
