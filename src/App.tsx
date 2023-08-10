@@ -10,6 +10,9 @@ import AppchainPage from "./routes/AppchainPage/AppchainPage";
 import AquariumPage from "./routes/AquariumPage/AquariumPage";
 import HomePage from "./routes/Homepage/HomePage";
 import NetworkPage from "./routes/NetworkPage/NetworkPage";
+import 'swiper/css';
+import 'swiper/css/grid';
+import 'swiper/css/pagination';
 
 const router = createBrowserRouter([
     {

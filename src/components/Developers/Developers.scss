@@ -1,0 +1,142 @@
+@import "../../assets/scss/spec/mixins";
+
+.Developers {
+  display: block;
+  width: 100%;
+  margin-top: 56px;
+
+  .swiper-grid .swiper-wrapper {
+    flex-direction: row !important;
+
+    .swiper-slide {
+      margin-top: 16px !important;
+    }
+  }
+
+  .swiper-pagination {
+    display: none;
+
+    @include media-up(md) {
+      margin-top: 12px;
+      position: static;
+      display: flex;
+      height: 44px;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+
+      .swiper-pagination-bullet {
+        margin: 0 !important;
+        width: 8px;
+        height: 8px;
+        background: var(--black-muted-10, rgba(29, 29, 30, 0.10));
+        opacity: 1;
+
+        &.swiper-pagination-bullet-active {
+          background: var(--black, #1D1D1F);;
+        }
+      }
+    }
+  }
+
+  &__title {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin-bottom: 24px;
+
+    @include media-up(md) {
+      margin-bottom: 12px;
+    }
+
+    img {
+      width: 24px;
+      height: 24px;
+      object-fit: contain;
+      margin: 0 12px;
+    }
+  }
+}
+
+.DeveloperCard {
+  border-radius: 4px;
+  background: var(--white, #FFF);
+  display: grid;
+  padding: 24px;
+  gap: 24px;
+  //min-height: 200px;
+}
+
+.DeveloperCardHeader {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  justify-content: space-between;
+
+  &__avatar {
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  &__social {
+    img {
+      height: 19px;
+      object-fit: contain;
+    }
+  }
+
+  &__info {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 38px 1fr;
+    gap: 8px;
+  }
+
+  &__data {
+    display: grid;
+    grid-template-columns: 1fr;
+    opacity: 0.8;
+  }
+
+  &__name {
+    color: var(--black, #1D1D1F);
+    leading-trim: both;
+    text-edge: cap;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%;
+  }
+
+  &__slug {
+    color: var(--black-muted-70, rgba(29, 29, 30, 0.70));
+    leading-trim: both;
+    text-edge: cap;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 140%; /* 16.8px */
+    letter-spacing: 0.24px;
+  }
+}
+
+.DeveloperCardMain {
+  p {
+    opacity: 0.8;
+    color: var(--black, #1D1D1F);
+    leading-trim: both;
+    text-edge: cap;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 450;
+    line-height: 140%;
+
+    &:not(:last-child) {
+      margin-bottom: 1.5em;
+    }
+  }
+
+  a {
+    color: var(--buttons-button-default, #3880EC);
+  }
+}
