@@ -8,7 +8,6 @@ import Chains from "../../assets/images/chains.png";
 import LogoImg from "../../assets/images/logo.png";
 import MageImg from "../../assets/images/mage.png";
 import "./Homepage.scss";
-import {Link} from "react-router-dom";
 
 export default function HomePage() {
     document.title = "Subsquid > Home"

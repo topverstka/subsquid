@@ -1,14 +1,12 @@
 @import "../../assets/scss/spec/mixins";
 
 .Banner {
-  &__image {
+  &__video {
     width: 100%;
-    background-image: url("../../assets/images/banner.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
     margin-bottom: 16px;
+    object-fit: cover;
 
     @include media-up(md) {
       margin-bottom: 12px;
