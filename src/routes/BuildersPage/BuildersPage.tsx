@@ -23,6 +23,12 @@ import User3PuctureImg from "../../assets/images/user-3.jpg";
 import User4PuctureImg from "../../assets/images/user-4.jpg";
 import User5PuctureImg from "../../assets/images/user-5.jpg";
 import User6PuctureImg from "../../assets/images/user-6.jpg";
+import User7PuctureImg from "../../assets/images/user-7.jpg";
+import User8PuctureImg from "../../assets/images/user-8.jpg";
+import User9PuctureImg from "../../assets/images/user-9.jpg";
+import User10PuctureImg from "../../assets/images/user-10.jpg";
+import User11PuctureImg from "../../assets/images/user-11.jpg";
+import User12PuctureImg from "../../assets/images/user-12.jpg";
 
 
 export default function BuildersPage() {
@@ -258,51 +264,51 @@ export default function BuildersPage() {
                         },
                         {
                             idx: 7,
-                            name: "Agyle",
-                            slug: "@StillAgyle",
-                            avatar: User1PuctureImg,
+                            name: "Zaur T",
+                            slug: "@taruza_",
+                            avatar: User7PuctureImg,
                             social: {image: TwitterImg, link: "#!"},
-                            children: <><p><a href="#!">@subsquid</a> is insanely good, especially since the Firesquid release.</p><p>Highly recommend using it for Paraverse ecosystem projects.</p></>
+                            children: <><p><a href="#!">@subsquid</a> is a great tool that helps us to deliver the best experience for tokenguard users.</p></>
                         },
                         {
                             idx: 8,
-                            name: "Tarun | Copperx.io",
-                            slug: "@TarunMangukiya",
-                            avatar: User2PuctureImg,
+                            name: "Manan",
+                            slug: "@manangouhari",
+                            avatar: User8PuctureImg,
                             social: {image: TwitterImg, link: "#!"},
-                            children: <><p><a href="#!">@subsquid</a> is a great tool for developers for indexing blockchain data. Loved it.</p></>
+                            children: <><p><a href="#!">@subsquid</a> for the win.</p></>
                         },
                         {
                             idx: 9,
-                            name: "Denko Mancheski",
-                            slug: "@Denkomancheski",
-                            avatar: User3PuctureImg,
+                            name: "Gabe",
+                            slug: "@TinkerGabe",
+                            avatar: User9PuctureImg,
                             social: {image: TwitterImg, link: "#!"},
-                            children: <><p>Now with the integration of <a href="#!">@subsquid</a>, we will enable devs to access high-quality on-chain data & build state-of-the-art dApps.</p></>
+                            children: <><p>Looking forward to <a href="#!">@subsquid</a>'s aggregated Giant Squid API, should make things incredibly easy for the Saturn UI...</p></>
                         },
                         {
                             idx: 10,
-                            name: "yangwao",
-                            slug: "@yangWao",
-                            avatar: User4PuctureImg,
+                            name: "Thomas Cermak",
+                            slug: "@yomsynth",
+                            avatar: User10PuctureImg,
                             social: {image: TwitterImg, link: "#!"},
-                            children: <><p><a href="#!">@subsquid</a> is the best indexer I've seen in web3 ecosystem 🤞.</p></>
+                            children: <><p>The team at <a href="#!">@subsquid</a> are amazing. I'm so glad to be working with them 🚀.</p></>
                         },
                         {
                             idx: 11,
-                            name: "YuriNondual",
-                            slug: "@Yuripetusko",
-                            avatar: User5PuctureImg,
+                            name: "Donnie",
+                            slug: "@DonnieBigBags",
+                            avatar: User11PuctureImg,
                             social: {image: TwitterImg, link: "#!"},
-                            children: <><p>Seriously, <a href="#!">@subsquid</a> is such a breeze to work with, re-indexing in few minutes is just amazing and makes our lives so much better at @RmrkApp.</p></>
+                            children: <><p>You guys are awesome, thanks for always offering to help us &lt;3.</p></>
                         },
                         {
                             idx: 12,
-                            name: "Metin Demir",
-                            slug: "@metmirr",
-                            avatar: User6PuctureImg,
+                            name: "Everloot",
+                            slug: "@EVRL00T",
+                            avatar: User12PuctureImg,
                             social: {image: TwitterImg, link: "#!"},
-                            children: <><p><a href="#!">@subsquid</a> is in another level when it comes to indexing blockchains. Not only speed, it’s so developer friendly and flexible.</p></>
+                            children: <><p>Thanks, <a href="#!">@subsquid</a>, for the value you provide. Looking forward to show the Loading time reduction in action.</p></>
                         },
                     ]}/>
                 </div>

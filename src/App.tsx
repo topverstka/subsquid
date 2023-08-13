@@ -13,6 +13,7 @@ import NetworkPage from "./routes/NetworkPage/NetworkPage";
 import 'swiper/css';
 import 'swiper/css/grid';
 import 'swiper/css/pagination';
+import "swiper/css/effect-creative"
 
 const router = createBrowserRouter([
     {
