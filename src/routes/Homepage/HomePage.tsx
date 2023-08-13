@@ -21,7 +21,7 @@ export default function HomePage() {
                     <Card className="HomePage__section" type={CardType.primary}>
                         <div className="HomePage-card">
                             <img className="HomePage-card__icon" src={Gear} alt="Build with SquidSDK"/>
-                            <h2 className="HomePage-card__title H4">Build with SquidSDK</h2>
+                            <h2 className="HomePage-card__title H3">Build with SquidSDK</h2>
                             <p className="HomePage-card__desc">Get free access to blockchain data at up to 150,000
                                 blocks per second from over 100+ networks</p>
                             <div className="HomePage-card__buttons">
@@ -33,7 +33,7 @@ export default function HomePage() {
                     <Card className="HomePage__section" type={CardType.primary}>
                         <div className="HomePage-card">
                             <img className="HomePage-card__icon" src={Chains} alt="Onboard a chain"/>
-                            <h2 className="HomePage-card__title H4">Onboard a chain</h2>
+                            <h2 className="HomePage-card__title H3">Onboard a chain</h2>
                             <p className="HomePage-card__desc">All network data ingested & stored for rapid and free
                                 access by devs.</p>
                             <div className="HomePage-card__buttons">

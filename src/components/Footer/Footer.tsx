@@ -1,7 +1,7 @@
 import './Footer.scss'
 import powered from '../../assets/images/powered.svg'
 import Polygon from '../../assets/images/Polygon.svg'
-import GCloud from '../../assets/images/GCloud.png'
+import GCloud from '../../assets/images/GCloud.svg'
 import Substrabe from '../../assets/images/Substrabe.svg'
 
 export default function Footer() {

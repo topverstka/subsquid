@@ -7,6 +7,8 @@
     height: 100vh;
     margin-bottom: 16px;
     object-fit: cover;
+    background-color: #070911;
+
 
     @include media-up(md) {
       margin-bottom: 12px;

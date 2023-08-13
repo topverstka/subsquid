@@ -1,6 +1,7 @@
 import "./PageBanner.scss";
 import * as React from "react";
 import classNames from "classnames";
+import {JSX} from "react";
 
 export interface PageBannerButtonsProps {
     type?: string;
@@ -11,7 +12,7 @@ export interface PageBannerButtonsProps {
 export interface PageBannerProps {
     title: string
     subtitle?: string
-    text?: string
+    text?: string | JSX.Element
     image?: string
     buttons?: PageBannerButtonsProps []
 }

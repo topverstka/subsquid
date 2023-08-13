@@ -4,7 +4,7 @@
   $root: &;
   padding: 12px 0;
   background: rgba(246, 248, 251, 0.10);
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(25px);
   position: fixed;
   top: 0;
   left: 0;
@@ -300,7 +300,7 @@
       top: 100%;
       left: 0;
       width: max-content;
-      max-width: 707px;
+      max-width: 782px;
       padding-top: 12px;
       visibility: hidden;
       opacity: 0;
@@ -425,11 +425,15 @@
   $root: &;
   display: grid;
   grid-template-columns: 1fr;
-  padding: 8px;
+  padding: 12px;
   gap: 8px;
   border-radius: 8px;
   background: var(--white, #FFF);
   transition: .2s;
+
+  @include media-up(md) {
+    padding: 16px;
+  }
 
   &__title {
     color: var(--black, #1D1D1F);
@@ -437,6 +441,15 @@
     font-weight: 500;
     line-height: 100%;
     letter-spacing: 0.28px;
+    transition: .2s;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  &__icon {
+    color: var(--orange, #FF6C2E);
+    margin-right: 12px;
     transition: .2s;
   }
 
@@ -447,6 +460,7 @@
     line-height: 140%;
     letter-spacing: 0.24px;
     transition: .2s;
+    padding-left: 32px;
   }
 
   &:hover {
@@ -454,7 +468,11 @@
 
     #{$root} {
       &__title {
-        color: var(--orange, #FF6C2E);
+        color: var(--buttons-button-hover, #3270CD);
+      }
+
+      &__icon {
+        color: var(--buttons-button-hover, #3270CD);
       }
 
       &__text {

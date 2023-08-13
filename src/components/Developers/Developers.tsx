@@ -75,7 +75,7 @@ export default function Developers(props: DevepolerCardsProps) {
                     slidesPerView: 3,
                     grid: {
                         rows: 2,
-                    }
+                    },
                 }
             }} slidesPerView={1} navigation={true} spaceBetween={16} pagination={{clickable: true}}>{items}</Swiper>
 
