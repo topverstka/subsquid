@@ -228,7 +228,7 @@ export default function BuildersPage() {
                             slug: "@TarunMangukiya",
                             avatar: User2PuctureImg,
                             social: {image: TwitterImg, link: "#!"},
-                            children: <><p><a href="#!">@subsquid</a> is a great tool for developers for indexing blockchain data. Loved it.</p></>
+                            children: <><p><a href="#!">@subsquid</a> is a great tool for developers for indexing blockchain data. Loved it. </p></>
                         },
                         {
                             idx: 3,

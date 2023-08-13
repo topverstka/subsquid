@@ -67,6 +67,7 @@ export default function AppchainPage() {
                             {
                                 title: "Without Subsquid",
                                 price: "20k",
+                                approximate: true,
                                 list: [
                                     {
                                         title: "Infrastructure",

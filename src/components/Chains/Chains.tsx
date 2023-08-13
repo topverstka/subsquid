@@ -42,14 +42,21 @@ export default function Chains(props: ChainsProps) {
         return 11
     }
 
-    function showAll(e: any) {
+    function toggleAll(e: any) {
         e.preventDefault()
 
         const _items: Chain[] = []
 
-        items.forEach((item) => {
-            _items.push({...item, visible: true})
-        })
+        if(isButtonShow) {
+            items.forEach((item) => {
+                _items.push({...item, visible: true})
+            })
+        } else {
+            items.forEach((item, index) => {
+                _items.push({...item, visible: index <= getCounts()})
+            })
+        }
+
 
         setItems(_items)
         setIsButtonShow(false)
@@ -69,8 +76,7 @@ export default function Chains(props: ChainsProps) {
                             'Button': true,
                             'Button--link': true,
                             'Button--single': true,
-                            'hidden': !isButtonShow
-                        })} onClick={showAll}>Show all</button>
+                        })} onClick={toggleAll}>Show {isButtonShow ? 'all': 'less'}</button>
                         : <p className="Chains__limit">& many more</p>}
                 </div>
             </div>

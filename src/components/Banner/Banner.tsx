@@ -17,6 +17,15 @@ export default function Banner() {
             <video className="Banner__video" onTimeUpdate={onPlayingVideo} autoPlay={true} muted={true} playsInline={true} loop={true}>
                 <source src={WebBanner} type='video/mp4'/>
             </video>
+            <div className="Banner__down" onClick={(e) => {
+                e.preventDefault()
+                window.scrollTo({top: window.innerHeight - 56, behavior: "smooth"  });
+            }}>
+                <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+                    <path d="M6.4563 13.0464L10.8279 17.418L15.1995 13.0464" stroke="white" strokeOpacity="0.8" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                    <path d="M6.4563 6.92621L10.8279 11.2978L15.1995 6.92621" stroke="white" strokeOpacity="0.8" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+            </div>
             <div className="Container">
                 <div className="Banner__socials">
                     <a href="#!" className="Banner__social"><img src={Twitter} alt="Twitter"/><span>Twitter</span></a>

@@ -45,9 +45,10 @@ export function DeveloperCard(props: DevepolerCardProps) {
 export default function Developers(props: DevepolerCardsProps) {
     const [swiper, setSwiper]: [any, Dispatch<SetStateAction<any>>] = useState(null)
     const [mainSwiper, setMainSwiper]: [any, Dispatch<SetStateAction<any>>] = useState(null)
+    const [maxHeight, setMaxHeight]: [number, Dispatch<SetStateAction<number>>] = useState(0)
 
     const items = props.items.map((item, index) => {
-        return <SwiperSlide key={index}><DeveloperCard {...item} children={item.children}/></SwiperSlide>
+        return <SwiperSlide style={{height: maxHeight}} key={index}><DeveloperCard {...item} children={item.children}/></SwiperSlide>
     })
 
     const itemsBullets = props.items.map((item, index) => {
@@ -64,7 +65,16 @@ export default function Developers(props: DevepolerCardsProps) {
     return (
         <div className="Developers">
             <h2 className="Developers__title">Developers <img src={LikeImg} alt=""/> SquidSDK</h2>
-            <Swiper onSwiper={setMainSwiper} thumbs={propsThumbs} modules={[Grid, Pagination, Thumbs]} breakpoints={{
+            <Swiper onSwiper={setMainSwiper} onInit={(s) => {
+                let maxValue = 0
+                s.slides.forEach(slide => {
+                    if(maxValue < (slide.scrollHeight + 24)) {
+                        maxValue = slide.scrollHeight + 24
+                    }
+                })
+
+                setMaxHeight(maxValue)
+            }} thumbs={propsThumbs} modules={[Grid, Pagination, Thumbs]} breakpoints={{
                 0: {
                     pagination: false,
                     autoHeight: true
@@ -73,12 +83,14 @@ export default function Developers(props: DevepolerCardsProps) {
                     slidesPerView: 2,
                     grid: {
                         rows: 2,
+                        fill: "column"
                     }
                 },
                 1024: {
                     slidesPerView: 3,
                     grid: {
                         rows: 2,
+                        fill: "column"
                     },
                 }
             }} slidesPerView={1} navigation={true} spaceBetween={16} pagination={{clickable: true}}>{items}</Swiper>
