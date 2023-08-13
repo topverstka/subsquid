@@ -60,7 +60,7 @@ export default function Developers(props: DevepolerCardsProps) {
         </SwiperSlide>
     })
 
-    const propsThumbs: any = swiper ? { swiper: swiper } : undefined
+    // const propsThumbs: any = swiper ? { swiper: swiper } : undefined // DEV
 
     return (
         <div className="Developers">

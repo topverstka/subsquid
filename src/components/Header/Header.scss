@@ -285,9 +285,17 @@
       transition: background-color .2s, color .1s;
       border-radius: 4px;
 
+      svg {
+        transition: transform .2s;
+      }
+
       &:hover {
         background: var(--grey-navbar-button-hover, #E1E2E3);
         color: var(--black, #1D1D1F);
+
+        svg {
+          transform: scaleY(-1);
+        }
       }
     }
   }

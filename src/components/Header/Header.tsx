@@ -184,7 +184,7 @@ export default function Header(params: HeaderParams = {isDark: false, coordYDark
                     <div className="Header__item">
                         <div className="Header__section">
                             <GitHub username="subsquid" reponame="squid-sdk"/>
-                            <a href="https://app.subsquid.io/" className="Header__button" target="_blank">Launch app</a>
+                            <a href="https://www.subsquid.io/launch-app" className="Header__button" target="_blank">Launch app</a>
                         </div>
                         <div className={classNames({
                             "Menu-button": true,

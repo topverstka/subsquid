@@ -33,7 +33,7 @@ export default function AppchainPage() {
                                 buttons={[
                                     {
                                         text: 'Onboard your chain',
-                                        href: '#!'
+                                        href: 'https://app.deform.cc/form/3f1021b2-6b70-4850-af09-a3b610f048a4/'
                                     }
                                 ]}/>
 
@@ -105,7 +105,7 @@ export default function AppchainPage() {
                                     <span><b>Wait 2-3 days</b> for the chain to be added to the Subsquid data lake</span>,
                                 ]}/>
                                 <div className="CardsSection__buttons">
-                                    <a href="#!" className="Button ">Onboard your chain</a>
+                                    <a href="https://app.deform.cc/form/3f1021b2-6b70-4850-af09-a3b610f048a4/" className="Button" target="_blank">Onboard your chain</a>
                                 </div>
                             </Card>
                             <Card className="CardsSection" type={CardType.secondary}>

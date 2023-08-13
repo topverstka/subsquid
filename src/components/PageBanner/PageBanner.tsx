@@ -22,7 +22,7 @@ export default function PageBanner(props: PageBannerProps) {
         return <a className={classNames({
             'Button': true,
             [`Button--${item.type}`]: !!item.type
-        })} key={index} href={item.href}>{item.text}</a>
+        })} key={index} href={item.href} target="_blank">{item.text}</a>
     }) : []
 
     return (

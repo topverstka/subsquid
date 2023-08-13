@@ -8,6 +8,7 @@ import Chains from "../../assets/images/chains.png";
 import LogoImg from "../../assets/images/logo.png";
 import MageImg from "../../assets/images/mage.png";
 import "./Homepage.scss";
+import {Link} from "react-router-dom";
 
 export default function HomePage() {
     document.title = "Subsquid > Home"
@@ -27,8 +28,8 @@ export default function HomePage() {
                             <p className="HomePage-card__desc">Get free access to blockchain data at up to 150,000
                                 blocks per second from over 100+ networks</p>
                             <div className="HomePage-card__buttons">
-                                <a href="#!" className='HomePage-card__button1 Button Button--infocus'>Learn more</a>
-                                <a href="#!" className='HomePage-card__button2 Button'>Docs</a>
+                                <Link to="/builders" className='HomePage-card__button1 Button Button--infocus'>Learn more</Link>
+                                <a target="_blank" href="https://docs.subsquid.io/" className='HomePage-card__button2 Button'>Docs</a>
                             </div>
                         </div>
                     </Card>
@@ -39,8 +40,8 @@ export default function HomePage() {
                             <p className="HomePage-card__desc">All network data ingested & stored for rapid and free
                                 access by devs.</p>
                             <div className="HomePage-card__buttons">
-                                <a href="#!" className='HomePage-card__button1 Button Button--infocus'>Learn more</a>
-                                <a href="#!" className='HomePage-card__button2 Button'>Onboard</a>
+                                <Link to="/appchain" className='HomePage-card__button1 Button Button--infocus'>Learn more</Link>
+                                <a target="_blank" href="https://app.deform.cc/form/3f1021b2-6b70-4850-af09-a3b610f048a4/" className='HomePage-card__button2 Button'>Onboard</a>
                             </div>
                         </div>
                     </Card>

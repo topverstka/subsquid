@@ -29,6 +29,7 @@ import User9PuctureImg from "../../assets/images/user-9.jpg";
 import User10PuctureImg from "../../assets/images/user-10.jpg";
 import User11PuctureImg from "../../assets/images/user-11.jpg";
 import User12PuctureImg from "../../assets/images/user-12.jpg";
+import {Link} from "react-router-dom";
 
 
 export default function BuildersPage() {
@@ -166,7 +167,7 @@ export default function BuildersPage() {
                     <PageBanner title='Free, Flexible, & Fast Data Access' text={<>Squid SDK is a dev-friendly & permissive developer toolkit. Code in TypeScript.⠀<span className='icon-ts'></span><span className='icon-js'></span></>} buttons={[
                         {
                             text: 'Docs',
-                            href: '#!'
+                            href: 'https://docs.subsquid.io/'
                         },
                     ]}/>
 
@@ -199,7 +200,7 @@ export default function BuildersPage() {
                                 <h3 className="CardsSection__title">Get started</h3>
                                 <p className="CardsSection__text">Extensive documentation for Squid SDK and the decentralized data lake network</p>
                                 <div className="CardsSection__buttons">
-                                    <a href="#!" className="Button">Docs</a>
+                                    <a href="https://docs.subsquid.io/" className="Button" target="_blank">Docs</a>
                                 </div>
                             </Card>
 
@@ -207,7 +208,7 @@ export default function BuildersPage() {
                                 <h3 className="CardsSection__title">Don’t want to self-host?</h3>
                                 <p className="CardsSection__text">We’ve got you covered. Explore our enterprise-grade hosted service, Aquarium</p>
                                 <div className="CardsSection__buttons">
-                                    <a href="#!" className="Button">Learn more</a>
+                                    <Link to="/aquarium" className="Button">Learn more</Link>
                                 </div>
                             </Card>
                         </Section>

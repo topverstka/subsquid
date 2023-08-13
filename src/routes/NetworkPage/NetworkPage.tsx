@@ -99,12 +99,12 @@ export default function NetworkPage() {
                                 buttons={[
                                     {
                                         text: 'Run a node',
-                                        href: '#!',
+                                        href: 'https://app.deform.cc/form/0aca51c6-3db0-41d5-a084-8b5344ed97be/',
                                         type: 'second'
                                     },
                                     {
                                         text: 'Launch app',
-                                        href: '#!'
+                                        href: 'https://www.subsquid.io/launch-app'
                                     }
                                 ]}/>
 
@@ -133,14 +133,14 @@ export default function NetworkPage() {
                                 title: "Instructions",
                                 link: {
                                     text: "GitHub Repo",
-                                    link: "#!"
+                                    link: "https://github.com/subsquid"
                                 }
                             },
                             {
                                 title: "Community",
                                 link: {
                                     text: "Join our Discord",
-                                    link: "#!"
+                                    link: "https://discord.com/invite/subsquid"
                                 }
                             }
                         ]}/>
@@ -154,7 +154,7 @@ export default function NetworkPage() {
                                 <h2 className="NetworkPage__title">FAQ</h2>
                                 <Faq items={FaqItems}></Faq>
                                 <div className="NetworkPage__buttons">
-                                    <a href="#!" className="Button Button--link">View full FAQ</a>
+                                    <a href="https://docs.subsquid.io/faq/" className="Button Button--link" target="_blank">View full FAQ</a>
                                 </div>
                             </Card>
                         </div>
