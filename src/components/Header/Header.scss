@@ -65,8 +65,10 @@
     display: none; // Only mobile
 
     @include media-up(lg) {
-      display: flex;
+      display: grid;
+      grid-template-columns: auto auto;
       align-items: center;
+      gap: 20px;
     }
   }
 
@@ -124,6 +126,24 @@
         &:hover {
           background: var(--white, #FFF);
         }
+      }
+    }
+
+    .github {
+      span, svg {
+        color: #fff;
+      }
+
+      &__section {
+        &:not(:last-child) {
+          &:before {
+            background: var(--white, #FFF);
+          }
+        }
+      }
+
+      &:hover {
+        background: var(--white, #FFF);
       }
     }
   }
@@ -185,8 +205,6 @@
   }
 
   &--open {
-
-
     & > span {
       border-color: #1D1D1F !important;
 
@@ -322,10 +340,6 @@
       &__content {
         visibility: visible;
         opacity: 1;
-      }
-
-      &__items, &__links {
-
       }
     }
   }

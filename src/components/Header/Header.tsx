@@ -4,6 +4,7 @@ import {Link} from "react-router-dom";
 import logo from "../../assets/images/logo.png";
 import classNames from "classnames";
 import {useEffect, useState} from "react";
+import GitHub from "../GitHub/GitHub";
 
 interface HeaderParams {
     isDark?: boolean,
@@ -182,7 +183,8 @@ export default function Header(params: HeaderParams = {isDark: false, coordYDark
                     </div>
                     <div className="Header__item">
                         <div className="Header__section">
-                            <a href="#!" className="Header__button">Launch app</a>
+                            <GitHub username="subsquid" reponame="squid-sdk"/>
+                            <a href="https://app.subsquid.io/" className="Header__button" target="_blank">Launch app</a>
                         </div>
                         <div className={classNames({
                             "Menu-button": true,
