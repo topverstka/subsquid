@@ -20,6 +20,8 @@ import Section, {SectionGap, SectionType} from "../../components/Section/Section
 
 export default function AppchainPage() {
     document.title = "Subsquid > Appchain page"
+    document.body.style.overflow = "auto"
+    window.scrollTo({top: 0})
 
     return (
         <>

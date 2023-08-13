@@ -18,6 +18,8 @@ import ChainsData from "../../data/chains";
 
 export default function AquariumPage() {
     document.title = "Subsquid > Aquarium page"
+    document.body.style.overflow = "auto"
+    window.scrollTo({top: 0})
 
     return (
         <>

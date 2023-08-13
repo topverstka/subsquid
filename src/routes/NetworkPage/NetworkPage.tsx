@@ -14,6 +14,8 @@ import CardLinks from "../../components/CardLinks/CardLinks";
 
 export default function NetworkPage() {
     document.title = "Subsquid > Network page"
+    document.body.style.overflow = "auto"
+    window.scrollTo({top: 0})
 
     const FaqItems = [
         {

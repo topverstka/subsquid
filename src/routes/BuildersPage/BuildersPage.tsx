@@ -33,6 +33,8 @@ import User12PuctureImg from "../../assets/images/user-12.jpg";
 
 export default function BuildersPage() {
     document.title = "Subsquid > Builders page"
+    document.body.style.overflow = "auto"
+    window.scrollTo({top: 0})
 
     const tableParams: TableParams = {
         rows: [

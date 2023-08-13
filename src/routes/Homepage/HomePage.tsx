@@ -11,6 +11,8 @@ import "./Homepage.scss";
 
 export default function HomePage() {
     document.title = "Subsquid > Home"
+    document.body.style.overflow = "auto"
+    window.scrollTo({top: 0})
 
     return (
         <>
