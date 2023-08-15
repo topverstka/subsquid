@@ -59,7 +59,7 @@ export default function Chains(props: ChainsProps) {
 
 
         setItems(_items)
-        setIsButtonShow(false)
+        setIsButtonShow(!isButtonShow)
     }
 
     return (

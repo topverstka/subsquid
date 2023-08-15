@@ -25,6 +25,10 @@
       grid-template-columns: 1fr 604px;
       gap: 0 56px;
       align-items: center;
+
+      .PageBanner__text {
+        max-width: 456px;
+      }
     }
   }
 

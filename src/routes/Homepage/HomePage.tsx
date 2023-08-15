@@ -9,11 +9,17 @@ import LogoImg from "../../assets/images/logo.png";
 import MageImg from "../../assets/images/mage.png";
 import "./Homepage.scss";
 import {Link} from "react-router-dom";
+import {useEffect, useState} from "react";
+import classNames from "classnames";
 
 export default function HomePage() {
-    document.title = "Subsquid > Home"
-    document.body.style.overflow = "auto"
-    window.scrollTo({top: 0})
+    useEffect(() => {
+        document.title = "Subsquid > Home"
+        document.body.style.overflow = "auto"
+        window.scrollTo({top: 0})
+    }, [])
+
+    const [isFocusedForm, setFocusedForm] = useState(false)
 
     return (
         <>
@@ -24,11 +30,11 @@ export default function HomePage() {
                     <Card className="HomePage__section" type={CardType.primary}>
                         <div className="HomePage-card">
                             <img className="HomePage-card__icon" src={Gear} alt="Build with SquidSDK"/>
-                            <h2 className="HomePage-card__title H3">Build with SquidSDK</h2>
+                            <h2 className="HomePage-card__title">Build with SquidSDK</h2>
                             <p className="HomePage-card__desc">Get free access to blockchain data at up to 150,000
                                 blocks per second from over 100+ networks</p>
                             <div className="HomePage-card__buttons">
-                                <Link to="/builders" className='HomePage-card__button1 Button Button--infocus'>Learn more</Link>
+                                <Link to="/builders" className='HomePage-card__button1 Button Button--secondary'>Learn more</Link>
                                 <a target="_blank" href="https://docs.subsquid.io/" className='HomePage-card__button2 Button'>Docs</a>
                             </div>
                         </div>
@@ -36,11 +42,11 @@ export default function HomePage() {
                     <Card className="HomePage__section" type={CardType.primary}>
                         <div className="HomePage-card">
                             <img className="HomePage-card__icon" src={Chains} alt="Onboard a chain"/>
-                            <h2 className="HomePage-card__title H3">Onboard a chain</h2>
+                            <h2 className="HomePage-card__title">Onboard a chain</h2>
                             <p className="HomePage-card__desc">All network data ingested & stored for rapid and free
                                 access by devs.</p>
                             <div className="HomePage-card__buttons">
-                                <Link to="/appchain" className='HomePage-card__button1 Button Button--infocus'>Learn more</Link>
+                                <Link to="/appchain" className='HomePage-card__button1 Button Button--secondary'>Learn more</Link>
                                 <a target="_blank" href="https://app.deform.cc/form/3f1021b2-6b70-4850-af09-a3b610f048a4/" className='HomePage-card__button2 Button'>Onboard</a>
                             </div>
                         </div>
@@ -79,9 +85,12 @@ export default function HomePage() {
                                     href="mailto:contact@subsquid.io">contact@subsquid.io</a>.</p>
                             </div>
                         </Card>
-                        <form className="form-email">
+                        <form className={classNames({
+                            'form-email': true,
+                            'form-email--focused': isFocusedForm
+                        })}>
                             <label htmlFor="email">
-                                <input id="email" type="email" placeholder="Your email" required={true}/>
+                                <input id="email" type="email" placeholder="Your email" required={true} onFocus={() => {setFocusedForm(true)}} onBlur={() => {setFocusedForm(false)}} />
                                 <button className="Button" type="submit">Subscribe</button>
                             </label>
                         </form>

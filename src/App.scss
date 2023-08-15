@@ -23,77 +23,7 @@ body {
   }
 }
 
-input[type="button"], input[type="reset"], input[type="submit"], button, .Button {
-  display: inline-flex;
-  align-items: center;
-  height: 44px;
-  padding: 14px 20px;
-  background-color: var(--color-primary);
-  color: var(--white, #F9F9F9);
-  border-radius: 4px;
-  user-select: none;
-  transition: background-color .2s, color .1s;
-  text-align: center;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 100%;
-  letter-spacing: 0.32px;
-  font-feature-settings: 'clig' off, 'liga' off;
 
-  &:hover {
-    background: var(--buttons-button-hover, #3270CD);
-  }
-
-  &:active {
-    background: var(--buttons-button-pressed, #285AA6);
-  }
-}
-
-.Button {
-  &--second {
-    background: var(--orange, #FF6C2E);
-
-    &:hover {
-      background: var(--grey-navbar-button-hover, #E1E2E3);
-      color: var(--black, #1D1D1F);
-    }
-  }
-
-  &--infocus {
-    background: var(--buttons-button-secondary-default, #DCE9FE);
-    color: var(--blue, #3880EC);
-
-
-    &:hover {
-      background: var(--buttons-button-secondary-hover, #C6D9F6);
-    }
-
-    &:active {
-      background: var(--buttons-button-secondary-pressed, #ABCCFF);
-    }
-  }
-
-  &--link {
-    height: 44px;
-    padding: 0 8px;
-    color: var(--buttons-button-default, #3880EC);
-    background: none;
-
-    &:hover {
-      background: none;
-      color: var(--buttons-button-hover, #3270CD);
-    }
-
-    &:active {
-      background: none;
-      color: var(--buttons-button-pressed, #285AA6);
-    }
-  }
-
-  &--single {
-    padding: 0 20px;
-  }
-}
 
 .hidden {
   display: none !important;
@@ -101,6 +31,8 @@ input[type="button"], input[type="reset"], input[type="submit"], button, .Button
 
 .form-email {
   display: flex;
+
+
 
   label {
     width: 100%;
@@ -112,7 +44,9 @@ input[type="button"], input[type="reset"], input[type="submit"], button, .Button
     align-self: stretch;
     border-radius: 4px;
     background: var(--white-cards, #FFF);
+    border: 1px solid var(--white-cards, #FFF);
     box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.04), 0 0 2px 0 rgba(0, 0, 0, 0.12);
+    transition: .2s;
   }
 
   input {
@@ -123,6 +57,12 @@ input[type="button"], input[type="reset"], input[type="submit"], button, .Button
 
     &::placeholder {
       color: var(--black-muted-30, rgba(29, 29, 31, 0.30));
+    }
+  }
+
+  &--focused {
+    label {
+      border-color: var(--blue, #3880EC);
     }
   }
 }

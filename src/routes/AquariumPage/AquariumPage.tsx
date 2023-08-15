@@ -30,7 +30,7 @@ export default function AquariumPage() {
                         title='We’ve got you covered!'
                         subtitle='Don’t want to self-host?'
                         image={MockupImg}
-                        text={`Reduce your team’s blockchain infrastructure hassle to zero. \nThe Aquarium is Subsquid’s hosted service with GraphQL APIs & more. `}
+                        text={`Reduce your team’s blockchain infrastructure hassle to zero. The Aquarium is Subsquid’s hosted service with GraphQL APIs & more. `}
                         buttons={[
                             {
                                 text: 'Launch app',

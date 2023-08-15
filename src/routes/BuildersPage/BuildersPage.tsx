@@ -156,7 +156,8 @@ export default function BuildersPage() {
             {text: 'SubQuery'},
             {text: 'GoldSky'},
             {text: 'Satsuma'},
-        ]
+        ],
+        title: <>Web3 data - this time it’s for everybody <span></span></>
     }
 
     return (
@@ -213,7 +214,7 @@ export default function BuildersPage() {
                             </Card>
                         </Section>
 
-                        <Table rows={tableParams.rows} headers={tableParams.headers}/>
+                        <Table title={tableParams.title} rows={tableParams.rows} headers={tableParams.headers}/>
                     </Section>
 
                     <Developers items={[

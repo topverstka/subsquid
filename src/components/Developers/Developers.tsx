@@ -60,7 +60,7 @@ export default function Developers(props: DevepolerCardsProps) {
         </SwiperSlide>
     })
 
-    // const propsThumbs: any = swiper ? { swiper: swiper } : undefined // DEV
+    const propsThumbs: any = swiper ? { swiper: swiper } : undefined // DEV
 
     return (
         <div className="Developers">
@@ -74,13 +74,16 @@ export default function Developers(props: DevepolerCardsProps) {
                 })
 
                 setMaxHeight(maxValue)
-            }} thumbs={{swiper: swiper}} modules={[Grid, Pagination, Thumbs]} breakpoints={{
+            }} thumbs={propsThumbs} modules={[Grid, Pagination, Thumbs]} breakpoints={{
                 0: {
                     pagination: false,
-                    autoHeight: true
+                    autoHeight: true,
+                    loop: true,
+                    initialSlide: 1
                 },
                 768: {
                     slidesPerView: 2,
+                    slidesPerGroup: 2,
                     grid: {
                         rows: 2,
                         fill: "column"
@@ -88,6 +91,7 @@ export default function Developers(props: DevepolerCardsProps) {
                 },
                 1024: {
                     slidesPerView: 3,
+                    slidesPerGroup: 3,
                     grid: {
                         rows: 2,
                         fill: "column"

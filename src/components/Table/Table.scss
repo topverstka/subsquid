@@ -1,25 +1,66 @@
 @import "../../assets/scss/spec/mixins";
 
 .Table {
-  padding: 24px 16px;
-  background: var(--white, #FFF);
-  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.04), 0 0 2px 0 rgba(0, 0, 0, 0.12);
-  position: relative;
   overflow: hidden;
 
-  @include media-up(md) {
-    padding: 24px;
+  &__title {
+    margin-bottom: 24px;
+    text-align: center;
+
+    span {
+      content: url('../../assets/images/fist.png');
+      width: 24px;
+      height: 24px;
+      position: relative;
+      top: 4px;
+
+      @include media-up(md) {
+        margin-right: 12px;
+        width: 32px;
+        height: 32px;
+      }
+
+      @include media-up(lg) {
+        margin-right: 12px;
+        width: 36px;
+        height: 36px;
+      }
+
+      @include media-up(xxl) {
+        margin-right: 16px;
+        width: 44px;
+        height: 44px;
+      }
+    }
+
+    @include media-up(lg) {
+      margin-bottom: 32px;
+    }
+
+    @include media-up(xll) {
+      margin-bottom: 36px;
+    }
   }
 
-  @include media-up(lg) {
+  &__wrapper {
     padding: 24px 16px;
+    background: var(--white, #FFF);
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.04), 0 0 2px 0 rgba(0, 0, 0, 0.12);
+    position: relative;
+    overflow: hidden;
+
+    @include media-up(md) {
+      padding: 24px;
+    }
+
+    @include media-up(lg) {
+      padding: 24px 16px;
+    }
+
+    @include media-up(xl) {
+      padding: 24px 32px;
+    }
   }
-
-  @include media-up(xl) {
-    padding: 24px 32px;
-  }
-
-
 
   &__virtual {
     background-color: rgba(255, 255, 255, 0.2);

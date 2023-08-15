@@ -59,6 +59,14 @@
 
   &__title {
     grid-area: Title;
+    color: var(--black, #1D1D1F);
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 130%;
+
+    @include media-up(md) {
+      font-size: 24px;
+    }
   }
 
   &__desc {
@@ -119,14 +127,23 @@
     width: 24px;
     height: 24px;
     object-fit: contain;
+
+    @include media-up(xxl) {
+      width: 32px;
+      height: 32px;
+    }
   }
 
   &__title {
     color: var(--black, #1D1D1F);
     font-size: 16px;
     font-weight: 700;
-    line-height: 1;
+    line-height: 130%;
     align-self: center;
+
+    @include media-up(md) {
+      font-size: 24px;
+    }
   }
 
   &__text {
