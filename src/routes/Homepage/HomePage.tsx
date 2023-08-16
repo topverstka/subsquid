@@ -32,7 +32,7 @@ export default function HomePage() {
                             <img className="HomePage-card__icon" src={Gear} alt="Build with SquidSDK"/>
                             <h2 className="HomePage-card__title">Build with SquidSDK</h2>
                             <p className="HomePage-card__desc">Get free access to blockchain data at up to 150,000
-                                blocks per second from over 100+ networks</p>
+                                blocks per second from over 100+ networks.</p>
                             <div className="HomePage-card__buttons">
                                 <Link to="/builders" className='HomePage-card__button1 Button Button--secondary'>Learn more</Link>
                                 <a target="_blank" href="https://docs.subsquid.io/" className='HomePage-card__button2 Button'>Docs</a>
@@ -79,7 +79,7 @@ export default function HomePage() {
                                 </div>
 
                                 <p className="HomePageCard__text">For product and network support please join <a
-                                    href="#!">our Discord</a> and ask questions in the #Dev-Chat and #Testnet channels.
+                                    href="https://discord.com/invite/subsquid">our Discord</a> and ask questions in the #Dev-Chat and #Testnet channels.
                                 </p>
                                 <p className="HomePageCard__text">For partnerships & business inquiries <a
                                     href="mailto:contact@subsquid.io">contact@subsquid.io</a>.</p>

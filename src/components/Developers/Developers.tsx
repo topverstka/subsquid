@@ -9,6 +9,7 @@ export interface DevepolerCardProps {
     name: string
     slug: string
     avatar: string
+    link: string
     social: {
         link: string
         image: string
@@ -23,6 +24,7 @@ export interface DevepolerCardsProps {
 export function DeveloperCard(props: DevepolerCardProps) {
     return (
         <div className="DeveloperCard">
+            <a href={props.link} className="DeveloperCard__link"></a>
             <div className="DeveloperCardHeader">
                 <div className="DeveloperCardHeader__info">
                     <img className="DeveloperCardHeader__avatar" src={props.avatar} alt=""/>
@@ -74,7 +76,7 @@ export default function Developers(props: DevepolerCardsProps) {
                 })
 
                 setMaxHeight(maxValue)
-            }} thumbs={{swiper: swiper}} modules={[Grid, Pagination, Thumbs]} breakpoints={{
+            }} thumbs={propsThumbs} modules={[Grid, Pagination, Thumbs]} breakpoints={{
                 0: {
                     pagination: false,
                     autoHeight: true,

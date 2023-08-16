@@ -42,6 +42,14 @@ export default function Chains(props: ChainsProps) {
         return 11
     }
 
+    function getOffset(el: Element) {
+        const rect = el.getBoundingClientRect();
+        return {
+            left: rect.left + window.scrollX,
+            top: rect.top + window.scrollY
+        };
+    }
+
     function toggleAll(e: any) {
         e.preventDefault()
 
@@ -60,6 +68,15 @@ export default function Chains(props: ChainsProps) {
 
         setItems(_items)
         setIsButtonShow(!isButtonShow)
+
+        if(!isButtonShow) {
+            const chains = document.querySelector('.Chains')
+
+            if(chains) {
+                const coords = getOffset(chains)
+                window.scrollTo({top: coords.top - 120, behavior: "smooth"  });
+            }
+        }
     }
 
     return (

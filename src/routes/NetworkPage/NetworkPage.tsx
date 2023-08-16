@@ -104,7 +104,8 @@ export default function NetworkPage() {
                                     },
                                     {
                                         text: 'Launch app',
-                                        href: 'https://www.subsquid.io/launch-app'
+                                        href: 'https://www.subsquid.io/launch-app',
+                                        type: 'orange'
                                     }
                                 ]}/>
 

@@ -28,10 +28,10 @@ export default function Banner() {
             </div>
             <div className="Container">
                 <div className="Banner__socials">
-                    <a href="#!" className="Banner__social"><img src={Twitter} alt="Twitter"/><span>Twitter</span></a>
-                    <a href="#!" className="Banner__social"><img src={Telegram} alt="Telegram"/><span>Telegram</span></a>
-                    <a href="#!" className="Banner__social"><img src={Discord} alt="Discord"/><span>Discord</span></a>
-                    <a href="#!" className="Banner__social"><img src={GitHub} alt="GitHub"/><span>GitHub</span></a>
+                    <a href="https://twitter.com/subsquid" target="_blank" className="Banner__social"><img src={Twitter} alt="Twitter"/><span>Twitter</span></a>
+                    <a href="https://t.me/subsquid" className="Banner__social" target="_blank"><img src={Telegram} alt="Telegram"/><span>Telegram</span></a>
+                    <a href="https://discord.com/invite/subsquid" className="Banner__social" target="_blank"><img src={Discord} alt="Discord"/><span>Discord</span></a>
+                    <a href="https://github.com/subsquid" className="Banner__social" target="_blank"><img src={GitHub} alt="GitHub"/><span>GitHub</span></a>
                 </div>
             </div>
         </div>

@@ -34,7 +34,8 @@ export default function AquariumPage() {
                         buttons={[
                             {
                                 text: 'Launch app',
-                                href: 'https://www.subsquid.io/launch-app'
+                                href: 'https://www.subsquid.io/launch-app',
+                                type: 'orange'
                             }
                         ]}/>
                     <Section>

@@ -47,6 +47,10 @@
 
   .ListNumber {
     margin-bottom: 24px;
+
+    @include media-up(md) {
+      margin-bottom: 40px;
+    }
   }
 
   &__buttons {
@@ -54,6 +58,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    &--dont-auto {
+      margin-top: 0;
+    }
   }
 }
 

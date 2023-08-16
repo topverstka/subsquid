@@ -23,16 +23,13 @@ body {
   }
 }
 
-
-
 .hidden {
   display: none !important;
 }
 
 .form-email {
   display: flex;
-
-
+  border-radius: 4px;
 
   label {
     width: 100%;
@@ -60,9 +57,12 @@ body {
     }
   }
 
-  &--focused {
+  &:hover, &--focused {
+    outline: 3px solid #DCE9FE;
+
     label {
-      border-color: var(--blue, #3880EC);
+      border-color: var(--black-muted-10, rgba(29, 29, 30, 0.10));
+      box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.04), 0 0 2px 0 rgba(0, 0, 0, 0.12);
     }
   }
 }
