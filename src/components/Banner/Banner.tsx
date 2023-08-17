@@ -4,19 +4,27 @@ import Twitter from "../../assets/images/Twitter.svg"
 import Telegram from "../../assets/images/Telegram.svg"
 import Discord from "../../assets/images/Discrord.svg"
 import GitHub from "../../assets/images/Github.svg"
-import WebBanner from "../../assets/videos/web-banner.mp4"
-import {SyntheticEvent} from "react";
+import introweb from "../../assets/videos/intro-web.mp4"
+import intromobile from "../../assets/videos/intro-phone.mp4"
+import {SyntheticEvent, useEffect, useRef} from "react";
 
 export default function Banner() {
+    const videoRef: any = useRef(null)
     const onPlayingVideo = (event: SyntheticEvent<HTMLVideoElement>) => {
-        if (Math.round(event.currentTarget.currentTime) >= 9) event.currentTarget.currentTime = 6.042;
+        if (Math.round(event.currentTarget.currentTime) >= 9) event.currentTarget.currentTime = 5.8;
     }
+
+    useEffect(() => {
+        if(videoRef) {
+            if(window.innerWidth <= 768) {
+                videoRef.current.src = intromobile
+            }
+        }
+    })
 
     return (
         <div className="Banner">
-            <video className="Banner__video" onTimeUpdate={onPlayingVideo} autoPlay={true} muted={true} playsInline={true} loop={true}>
-                <source src={WebBanner} type='video/mp4'/>
-            </video>
+            <video className="Banner__video" src={introweb} onTimeUpdate={onPlayingVideo} autoPlay={true} muted={true} playsInline={true} loop={true} ref={videoRef}></video>
             <div className="Banner__down" onClick={(e) => {
                 e.preventDefault()
                 window.scrollTo({top: window.innerHeight - 56, behavior: "smooth"  });
