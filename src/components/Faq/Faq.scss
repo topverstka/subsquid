@@ -31,7 +31,12 @@
     line-height: 150%;
 
     a {
-      color: var(--blue, #3880EC);
+      color: var(--buttons-button-default, #3880EC);
+      transition: color .3s;
+
+      &:hover {
+        color: var(--black, #1D1D1F);
+      }
     }
 
     ul {

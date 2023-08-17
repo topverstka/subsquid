@@ -79,7 +79,7 @@ export default function HomePage() {
                                 </div>
 
                                 <p className="HomePageCard__text">For product and network support please join <a
-                                    href="https://discord.com/invite/subsquid">our Discord</a> and ask questions in the #Dev-Chat and #Testnet channels.
+                                    href="https://discord.com/invite/subsquid" target="_blank">our Discord</a> and ask questions in the #Dev-Chat and #Testnet channels.
                                 </p>
                                 <p className="HomePageCard__text">For partnerships & business inquiries <a
                                     href="mailto:contact@subsquid.io">contact@subsquid.io</a>.</p>

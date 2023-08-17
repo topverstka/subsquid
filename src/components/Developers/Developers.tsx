@@ -24,7 +24,7 @@ export interface DevepolerCardsProps {
 export function DeveloperCard(props: DevepolerCardProps) {
     return (
         <div className="DeveloperCard">
-            <a href={props.link} className="DeveloperCard__link"></a>
+            <a href={props.link} className="DeveloperCard__link" target="_blank"></a>
             <div className="DeveloperCardHeader">
                 <div className="DeveloperCardHeader__info">
                     <img className="DeveloperCardHeader__avatar" src={props.avatar} alt=""/>

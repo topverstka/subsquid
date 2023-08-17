@@ -116,10 +116,15 @@
     grid-template-columns: auto 1fr;
     gap: 12px;
     margin-bottom: 12px;
-    align-content: center;
+    align-items: center;
 
     @include media-up(md) {
       margin-bottom: 16px;
+    }
+
+    img {
+      position: relative;
+      top: -1px;
     }
   }
 
@@ -187,5 +192,10 @@
 
   a {
     color: var(--buttons-button-default, #3880EC);
+    transition: color .3s;
+
+    &:hover {
+      color: var(--black, #1D1D1F);
+    }
   }
 }
