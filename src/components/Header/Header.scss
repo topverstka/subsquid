@@ -377,7 +377,10 @@
 
 
       @include media-up(lg) {
+
         &__button {
+          color: var(--black, #1D1D1F);
+
           .menu-icon {
             transform: scale(1) translateY(-50%);
             width: 20px;
@@ -476,7 +479,6 @@
     }
 
     &:hover {
-      //background: var(--background, #F6F8FB);
       color: var(--orange, #FF6C2E);
 
       .menu-icon {
