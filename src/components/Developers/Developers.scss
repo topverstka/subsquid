@@ -3,9 +3,25 @@
 .Developers {
   display: block;
   width: 100%;
-  margin-top: 56px;
+  padding-top: 56px;
   margin: 0 -4px;
   overflow: visible;
+
+  @include media-up(md) {
+    padding-top: 40px;
+  }
+
+  @include media-up(lg) {
+    padding-top: 52px;
+  }
+
+  @include media-up(xl) {
+    padding-top: 64px;
+  }
+
+  @include media-up(xxl) {
+    padding-top: 80px;
+  }
 
   .swiper {
     padding: 0 4px;
