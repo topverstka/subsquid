@@ -54,6 +54,7 @@
     }
 
     @include media-up(lg) {
+      position: relative;
       display: flex;
       align-items: center;
       gap: 12px;
@@ -99,6 +100,10 @@
   &--dark {
     background: rgba(6, 7, 34, 0.10);
     color: var(--white, #FFF);
+
+    .HoverStateBg {
+      background: var(--white, #FFF);
+    }
 
     .Menu-button {
       & > span {
@@ -277,7 +282,7 @@
       font-weight: 500;
       line-height: 100%;
       letter-spacing: 0.28px;
-      padding: 0 12px;
+      padding: 0 24px;
       display: flex;
       align-items: center;
       gap: 4px;
@@ -285,16 +290,36 @@
       transition: background-color .2s, color .1s;
       border-radius: 4px;
 
-      svg {
-        transition: transform .2s;
+      span {
+        transition: .3s;
+        display: table;
+        position: relative;
+        top: 1px;
+      }
+
+      #{$root} {
+        &__arrow {
+          transition: transform .3s;
+        }
       }
 
       &:hover {
-        background: var(--grey-navbar-button-hover, #E1E2E3);
         color: var(--black, #1D1D1F);
 
-        svg {
-          transform: scaleY(-1);
+        .menu-icon {
+          transform: scale(1) translateY(-50%);
+          width: 20px;
+          height: 20px;
+        }
+
+        span {
+          transform: translateX(12px);
+        }
+
+        #{$root} {
+          &__arrow {
+            transform: scaleY(-1) translateX(12px);
+          }
         }
       }
     }
@@ -349,11 +374,31 @@
         visibility: visible;
         opacity: 1;
       }
+
+
+      @include media-up(lg) {
+        &__button {
+          .menu-icon {
+            transform: scale(1) translateY(-50%);
+            width: 20px;
+            height: 20px;
+          }
+
+          span {
+            transform: translateX(12px);
+          }
+        }
+
+        &__arrow {
+          transform: scaleY(-1) translateX(12px);
+        }
+      }
     }
   }
 }
 
 .HeaderLinkItem {
+  $root: &;
   @include media-down(md) {
     color: var(--black, #1D1D1F);
     font-feature-settings: 'clig' off, 'liga' off;
@@ -390,7 +435,7 @@
       }
     }
 
-    svg {
+    &__next {
       transition: opacity .2s;
       opacity: 0;
     }
@@ -399,7 +444,7 @@
       background: var(--background, #F6F8FB);
       color: var(--orange, #FF6C2E);
 
-      svg {
+      &__next {
         opacity: 1;
       }
     }
@@ -413,7 +458,7 @@
     font-weight: 500;
     line-height: 100%;
     letter-spacing: 0.28px;
-    padding: 0 12px;
+    padding: 0 26px;
     display: flex;
     align-items: center;
     gap: 4px;
@@ -421,20 +466,39 @@
     transition: background-color .2s, color .1s;
     border-radius: 4px;
     justify-content: space-between;
+    position: relative;
+
+    span {
+      transition: .3s;
+      display: table;
+      position: relative;
+      top: 1px;
+    }
 
     &:hover {
-      background: var(--background, #F6F8FB);
+      //background: var(--background, #F6F8FB);
       color: var(--orange, #FF6C2E);
+
+      .menu-icon {
+        transform: scale(1) translateY(-50%);
+      }
+
+      span {
+        transform: translateX(12px);
+      }
     }
 
     &--top {
       min-width: auto;
-      svg {
-        display: none;
+
+      #{$root} {
+        &__next {
+          display: none;
+        }
       }
 
       &:hover {
-        background: var(--grey-navbar-button-hover, #E1E2E3);
+        //background: var(--grey-navbar-button-hover, #E1E2E3);
         color: var(--black, #1D1D1F);
       }
     }
@@ -517,5 +581,38 @@
         color: var(--black, #1D1D1F);
       }
     }
+  }
+}
+
+.menu-icon {
+  display: none;
+
+  @include media-up(lg) {
+    display: block;
+    margin-right: 8px;
+    transition: .3s;
+    transform: scale(0) translateY(-50%);
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform-origin: top;
+  }
+}
+
+
+.HoverStateBg {
+  display: none;
+
+  @include media-up(lg) {
+    border-radius: 4px;
+    background: var(--buttons-grey-hover, #E1E2E3);
+    display: table;
+    width: 0;
+    height: 36px;
+    z-index: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: .2s;
   }
 }
