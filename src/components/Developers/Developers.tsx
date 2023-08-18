@@ -76,7 +76,7 @@ export default function Developers(props: DevepolerCardsProps) {
                 })
 
                 setMaxHeight(maxValue)
-            }} thumbs={{swiper: swiper}} modules={[Grid, Pagination, Thumbs]} breakpoints={{
+            }} thumbs={{ swiper: swiper }} modules={[Grid, Pagination, Thumbs]} breakpoints={{
                 0: {
                     pagination: false,
                     autoHeight: true,

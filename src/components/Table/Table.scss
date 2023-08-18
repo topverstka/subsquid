@@ -1,5 +1,13 @@
 @import "../../assets/scss/spec/mixins";
 
+.table-over {
+  overflow: hidden;
+
+  @include media-up(md) {
+    overflow: visible;
+  }
+}
+
 .Table {
   overflow: hidden;
 

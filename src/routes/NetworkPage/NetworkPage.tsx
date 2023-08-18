@@ -10,6 +10,7 @@ import * as React from "react";
 import Section, {SectionGap} from "../../components/Section/Section";
 import ZapImg from "../../assets/images/water.png";
 import CardLinks from "../../components/CardLinks/CardLinks";
+import {FadeInSection} from "../../components/FadeInSection/FadeInSection";
 
 
 export default function NetworkPage() {
@@ -110,55 +111,66 @@ export default function NetworkPage() {
                                 ]}/>
 
                     <Section gap={SectionGap.g32}>
-                        <Card type={CardType.primary}>
-                            <div className="NetworkPageCard">
-                                <div className="NetworkPageCard__header">
-                                    <img className="NetworkPageCard__image" src={ZapImg} alt=""/>
-                                    <p className="NetworkPageCard__title">What we’re building</p>
-                                </div>
+                        <FadeInSection>
+                            <Card type={CardType.primary}>
+                                <div className="NetworkPageCard">
+                                    <div className="NetworkPageCard__header">
+                                        <img className="NetworkPageCard__image" src={ZapImg} alt=""/>
+                                        <p className="NetworkPageCard__title">What we’re building</p>
+                                    </div>
 
-                                <p className="NetworkPageCard__text">Imagine if any amount of blockchain data could be accessed by anybody, without middlemen. What if this could be done fast (up to 150k blocks/s) and at no charge to developers!</p>
-                                <p className="NetworkPageCard__text">That’s what the Subsquid decentralized data lake is for. </p>
+                                    <p className="NetworkPageCard__text">Imagine if any amount of blockchain data could
+                                        be accessed by anybody, without middlemen. What if this could be done fast (up
+                                        to 150k blocks/s) and at no charge to developers!</p>
+                                    <p className="NetworkPageCard__text">That’s what the Subsquid decentralized data
+                                        lake is for. </p>
+                                </div>
+                            </Card>
+                        </FadeInSection>
+
+
+                        <FadeInSection>
+                            <CardLinks items={[
+                                {
+                                    title: "Node runners",
+                                    link: {
+                                        text: "Onboarding form",
+                                        link: "#!"
+                                    }
+                                },
+                                {
+                                    title: "Instructions",
+                                    link: {
+                                        text: "GitHub Repo",
+                                        link: "https://github.com/subsquid"
+                                    }
+                                },
+                                {
+                                    title: "Community",
+                                    link: {
+                                        text: "Join our Discord",
+                                        link: "https://discord.com/invite/subsquid"
+                                    }
+                                }
+                            ]}/>
+                        </FadeInSection>
+
+                        <FadeInSection>
+                            <div className="NetworkPage__sections">
+                                <Card className="NetworkPage__section">
+                                    <h2 className="NetworkPage__title">Roadmap</h2>
+                                    <Roadmap items={RoadmapItems}/>
+                                </Card>
+                                <Card className="NetworkPage__section">
+                                    <h2 className="NetworkPage__title">FAQ</h2>
+                                    <Faq items={FaqItems}></Faq>
+                                    <div className="NetworkPage__buttons">
+                                        <a href="https://docs.subsquid.io/faq/" className="Button Button--link"
+                                           target="_blank">View full FAQ</a>
+                                    </div>
+                                </Card>
                             </div>
-                        </Card>
-
-                        <CardLinks items={[
-                            {
-                                title: "Node runners",
-                                link: {
-                                    text: "Onboarding form",
-                                    link: "#!"
-                                }
-                            },
-                            {
-                                title: "Instructions",
-                                link: {
-                                    text: "GitHub Repo",
-                                    link: "https://github.com/subsquid"
-                                }
-                            },
-                            {
-                                title: "Community",
-                                link: {
-                                    text: "Join our Discord",
-                                    link: "https://discord.com/invite/subsquid"
-                                }
-                            }
-                        ]}/>
-
-                        <div className="NetworkPage__sections">
-                            <Card className="NetworkPage__section">
-                                <h2 className="NetworkPage__title">Roadmap</h2>
-                                <Roadmap items={RoadmapItems}/>
-                            </Card>
-                            <Card className="NetworkPage__section">
-                                <h2 className="NetworkPage__title">FAQ</h2>
-                                <Faq items={FaqItems}></Faq>
-                                <div className="NetworkPage__buttons">
-                                    <a href="https://docs.subsquid.io/faq/" className="Button Button--link" target="_blank">View full FAQ</a>
-                                </div>
-                            </Card>
-                        </div>
+                        </FadeInSection>
                     </Section>
                 </div>
             </Content>
