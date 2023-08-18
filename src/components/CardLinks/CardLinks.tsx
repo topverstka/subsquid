@@ -16,10 +16,13 @@ export interface CardLinksProps {
 
 export default function CardLinks(props: CardLinksProps) {
     const items = props.items.map((item, index) => {
-        return <div className="CardCountersItem" key={index}>
-            <p className="CardCountersItem__title H3">{item.title}</p>
-            <a href={item.link.link} target="_blank" className="CardCountersItem__link Button Button--link">{item.link.text}</a>
-        </div>
+        return <a href={item.link.link} target="_blank" className="CardCountersItem" key={index}>
+            <span className="CardCountersItem__wrapper">
+                            <p className="CardCountersItem__title H3">{item.title}</p>
+                            <a href={item.link.link} target="_blank"
+                               className="CardCountersItem__link Button Button--link">{item.link.text}</a>
+            </span>
+        </a>
     })
 
     return (

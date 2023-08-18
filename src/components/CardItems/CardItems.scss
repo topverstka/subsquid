@@ -12,11 +12,14 @@
       gap: 0 80px;
     }
 
+
     .CardItem {
       @include media-up(lg) {
-        grid-template-columns: 1fr;
-        gap: 24px;
-        position: relative;
+        &__wrapper {
+          grid-template-columns: 1fr;
+          gap: 24px;
+          position: relative;
+        }
 
         &:not(:last-child) {
           padding-bottom: 0;
@@ -39,21 +42,12 @@
 }
 
 .CardItem {
-  display: grid;
-  gap: 12px;
-  grid-template-columns: 1fr;
+  $root: &;
+  position: relative;
 
   &:not(:last-child) {
     padding-bottom: 32px;
     border-bottom: 1px solid rgba(29, 29, 30, 0.10);
-  }
-
-  @include media-up(md) {
-    gap: 16px;
-  }
-
-  @include media-up(lg) {
-    grid-template-columns: 248px 1fr;
   }
 
   &__header {
@@ -82,5 +76,30 @@
     font-weight: 450;
     line-height: 150%;
     letter-spacing: 0.32px;
+  }
+
+  &__wrapper {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: 1fr;
+    transform-origin: left;
+
+    @include media-up(md) {
+      gap: 16px;
+    }
+
+    @include media-up(lg) {
+      grid-template-columns: 248px 1fr;
+    }
+
+    transition: transform .4s ease-in-out;
+  }
+
+  &:hover {
+    #{$root} {
+      &__wrapper {
+        transform: scale(1.05);
+      }
+    }
   }
 }

@@ -25,20 +25,26 @@
     }
 
     @include media-up(lg) {
-      gap: 0 120px;
-    }
-
-    @include media-up(xl) {
-      gap: 0 160px;
+      gap: 0 100px;
     }
   }
 }
 
 .CardCountersItem {
-  display: grid;
-  gap: 8px;
-  grid-template-columns: 1fr;
+  $root: &;
+
   position: relative;
+
+  &__wrapper {
+    display: grid;
+    gap: 8px;
+    grid-template-columns: 1fr;
+    transition: transform .4s ease-in-out;
+  }
+
+  @include media-up(lg) {
+    padding: 40px 24px;
+  }
 
   &:not(:last-child) {
     &:after {
@@ -69,6 +75,7 @@
 
   &__link {
     margin: 0 auto;
+    transition: .3s;
   }
 
   &__text {
@@ -78,5 +85,17 @@
     line-height: 150%;
     letter-spacing: 0.32px;
     white-space: nowrap;
+  }
+
+  &:hover {
+    #{$root} {
+      &__wrapper {
+        transform: scale(1.05);
+      }
+
+      &__link {
+        color: var(--black, #1D1D1F);
+      }
+    }
   }
 }

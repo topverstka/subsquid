@@ -66,3 +66,12 @@ body {
     }
   }
 }
+
+
+.animation-scale-hover {
+  transition: transform .4s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}

@@ -10,8 +10,10 @@ export interface PromoProps {
 export default function Promo(props: PromoProps) {
     return (
         <Card className="Promo" type={CardType.secondary}>
-            <img src={props.image} alt=""/>
-            <p>{props.text}</p>
+            <div className="Promo__wrapper">
+                <img src={props.image} alt=""/>
+                <p>{props.text}</p>
+            </div>
         </Card>
     );
 }

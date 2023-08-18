@@ -34,6 +34,18 @@
         color: var(--buttons-button-default, #3880EC);
       }
     }
+
+    .CardPriceItem {
+      .CardPriceItem__wrap, .CardPriceItem__list {
+        transition: transform .4s ease-in-out;
+      }
+
+      &:hover {
+        .CardPriceItem__wrap, .CardPriceItem__list {
+          transform: scale(1.05);
+        }
+      }
+    }
   }
 }
 
@@ -45,16 +57,19 @@
   height: 100%;
 
   &__header {
-    display: grid;
     padding: 24px 0;
+    color: var(--foreground-default, #1D1D1F);
+    background: var(--black-muted-10, rgba(29, 29, 30, 0.10));
+    border-radius: 4px 4px 0px 0px;
+  }
+
+  &__wrap {
+    display: grid;
     justify-content: center;
     align-items: flex-start;
     gap: 8px;
     align-self: stretch;
-    color: var(--foreground-default, #1D1D1F);
-    background: var(--black-muted-10, rgba(29, 29, 30, 0.10));
     grid-template-columns: auto auto;
-    border-radius: 4px 4px 0px 0px;
   }
 
   &__main {

@@ -97,7 +97,7 @@ export default function AppchainPage() {
                         ]}/>
 
                         <Section type={SectionType.row} gap={SectionGap.g32}>
-                            <Card className="CardsSection">
+                            <Card className="CardsSection animation-scale-hover">
                                 <h3 className="CardsSection__title">How it works?</h3>
                                 <ListNumber items={[
                                     <span><b>Contact</b> our team</span>,

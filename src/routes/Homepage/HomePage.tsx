@@ -27,7 +27,7 @@ export default function HomePage() {
             <Banner/>
             <div className="Container">
                 <div className="HomePage">
-                    <Card className="HomePage__section" type={CardType.primary}>
+                    <Card className="HomePage__section animation-scale-hover" type={CardType.primary}>
                         <div className="HomePage-card">
                             <img className="HomePage-card__icon" src={Gear} alt="Build with SquidSDK"/>
                             <h2 className="HomePage-card__title">Build with SquidSDK</h2>
@@ -39,7 +39,7 @@ export default function HomePage() {
                             </div>
                         </div>
                     </Card>
-                    <Card className="HomePage__section" type={CardType.primary}>
+                    <Card className="HomePage__section animation-scale-hover" type={CardType.primary}>
                         <div className="HomePage-card">
                             <img className="HomePage-card__icon" src={Chains} alt="Onboard a chain"/>
                             <h2 className="HomePage-card__title">Onboard a chain</h2>
