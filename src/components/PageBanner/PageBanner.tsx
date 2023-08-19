@@ -21,7 +21,7 @@ export default function PageBanner(props: PageBannerProps) {
     const [isVisibleSubtitle, setVisibleSubtitle] = useState(false)
     const [isVisibleTitle, setVisibleTitle] = useState(false)
     const [isVisibleText, setVisibleText] = useState(false)
-    const [isVisibleButtons, setVisibleButtons] = useState([])
+    const [isVisibleButtons, setVisibleButtons]: any = useState([])
     const [isVisibleImage, setVisibleImage] = useState(false)
 
     useEffect(() => {
@@ -40,7 +40,7 @@ export default function PageBanner(props: PageBannerProps) {
 
                     buttons.forEach((button, index) => {
                         setTimeout(() => {
-                            setVisibleButtons((prevState) => [...prevState, true])
+                            setVisibleButtons((prevState: any[]) => [...prevState, true])
                         }, 300 * index)
                     })
                 }, 300)
