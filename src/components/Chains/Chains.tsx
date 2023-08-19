@@ -1,5 +1,5 @@
 import * as React from "react";
-import {useState} from "react";
+import {useEffect, useRef, useState} from "react";
 import './Chains.scss'
 import {Chain} from '../../data/chains'
 import classNames from "classnames";
@@ -9,13 +9,12 @@ interface ChainsProps {
     items: Chain[],
     title: string
     type: CardType
-    countsMobile?: number,
     counts?: number,
+    rows?: number
     limit?: number
 }
 
 export function ChainItem(item: Chain) {
-
     return (
         <div className={classNames({
             'ChainItem': true,
@@ -28,18 +27,30 @@ export function ChainItem(item: Chain) {
 }
 
 export default function Chains(props: ChainsProps) {
-    const isLimit = !!props.limit
-    const [items, setItems] = useState(props.items.map((item, index) => {
-        item.visible = index <= getCounts()
-        return item
-    }))
+    const [rows, setRows] = useState([])
     const [isButtonShow, setIsButtonShow] = useState(true)
+    const rowsRef: any = useRef(null)
+
+    useEffect(() => {
+        let size: number = getCounts();
+        let _rows: any[] = [];
+
+        for (let i = 0; i < Math.ceil(props.items.length / size); i++) {
+            _rows[i] = {}
+
+            if(i < props.rows) {
+                _rows[i].visible = true
+            }
+
+            _rows[i].items = props.items.slice((i * size), (i * size) + size) || []
+        }
+
+        setRows(_rows)
+    }, [rowsRef])
 
     function getCounts(): number {
-        if (isLimit) return props.limit || 5
-
-        if (window.innerWidth < 768) return 5
-        return 11
+        if (window.innerWidth < 768) return 3
+        return 6
     }
 
     function getOffset(el: Element) {
@@ -53,28 +64,30 @@ export default function Chains(props: ChainsProps) {
     function toggleAll(e: any) {
         e.preventDefault()
 
-        const _items: Chain[] = []
-
-        if(isButtonShow) {
-            items.forEach((item) => {
-                _items.push({...item, visible: true})
-            })
+        if (isButtonShow) {
+            setRows((_rows) => _rows.map(v => {
+                v.visible = true
+                return v
+            }))
         } else {
-            items.forEach((item, index) => {
-                _items.push({...item, visible: index <= getCounts()})
-            })
+            setRows((_rows) => _rows.map((v, i) => {
+                if(i >= props.rows) {
+                    _rows[i].visible = false
+                }
+                return v
+            }))
         }
 
 
-        setItems(_items)
         setIsButtonShow(!isButtonShow)
 
-        if(!isButtonShow) {
+
+        if (!isButtonShow) {
             const chains = document.querySelector('.Chains')
 
-            if(chains) {
+            if (chains) {
                 const coords = getOffset(chains)
-                window.scrollTo({top: coords.top - 120, behavior: "smooth"  });
+                window.scrollTo({top: coords.top - 120, behavior: "smooth"});
             }
         }
     }
@@ -83,17 +96,29 @@ export default function Chains(props: ChainsProps) {
         <Card className="Chains" type={props.type}>
             <div className="Chains__wrapper">
                 <h2 className="Chains__title">{props.title}</h2>
-                <div className="Chains__items">{items.map((item, index) => (
-                    <ChainItem key={index} title={item.title} image={item.image}
-                               visible={item.visible || false}></ChainItem>
-                ))}</div>
+                <div ref={rowsRef} className={classNames({
+                    'Chains__rows': true,
+                    'Chains__rows--visible': !isButtonShow
+                })}>
+                    {
+                        rows.map((row, i) => <div key={i} style={{height: row.visible ? 73 : 0}} className={classNames({
+                            'Chains__row': true,
+                            'Chains__row--visible': !!row.visible
+                        })}>
+                            {row.items.map((item, index) => (
+                                <ChainItem key={index} title={item.title} image={item.image}
+                                           visible={item.visible || false}></ChainItem>
+                            ))}
+                        </div>)
+                    }
+                </div>
                 <div className="Chains__buttons">
-                    {!isLimit ?
+                    {!props.limit ?
                         <button className={classNames({
                             'Button': true,
                             'Button--link': true,
                             'Button--single': true,
-                        })} onClick={toggleAll}>Show {isButtonShow ? 'all': 'less'}</button>
+                        })} onClick={toggleAll}>Show {isButtonShow ? 'all' : 'less'}</button>
                         : <p className="Chains__limit">& many more</p>}
                 </div>
             </div>

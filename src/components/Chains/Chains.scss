@@ -4,11 +4,9 @@
   grid-template-columns: 1fr;
   gap: 12px;
   text-align: center;
-  display: none;
-
-  &--visible {
-    display: grid;
-  }
+  display: grid;
+  transform: scale(0);
+  transition: .3s;
 
   &__title {
     color: var(--black, #1D1D1F);
@@ -28,25 +26,57 @@
 }
 
 .Chains {
-  &__items {
+  &__row {
+    width: 100%;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
     align-items: flex-start;
-    gap: 32px 15px;
+    grid-template-columns: repeat(3, 1fr);
     justify-content: space-around;
+    gap: 15px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .3s, height .6s;
+
+    &--visible {
+      visibility: visible;
+      opacity: 1;
+
+      .ChainItem {
+        transform: scale(1);
+      }
+
+      &:not(:first-child) {
+        margin-top: 32px;
+
+        @include media-up(lg) {
+          margin-top: 36px;
+        }
+
+        @include media-up(xxl) {
+          margin-top: 40px;
+        }
+      }
+    }
 
     @include media-up(md) {
-      grid-template-columns: repeat(6, 80px);
-      gap: 32px 25px;
+      grid-template-columns: repeat(6, 1fr);
+      padding: 0 32px;
     }
 
     @include media-up(lg) {
-      gap: 32px 60px;
-      justify-content: center;
+      padding: 0 66px;
     }
 
     @include media-up(xl) {
-      gap: 32px 80px;
+      padding: 0 148px;
+    }
+  }
+
+  &__rows {
+    transition: .3s;
+
+    &--visible {
+
     }
   }
 

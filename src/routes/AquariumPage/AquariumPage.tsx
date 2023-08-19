@@ -92,7 +92,7 @@ export default function AquariumPage() {
                         </FadeInSection>
                         <FadeInSection>
                             <Chains title="Trusted by hundreds" items={ChainsData.slice(0, 6)} type={CardType.secondary}
-                                    limit={5}/>
+                                    limit={5} rows={2}/>
                         </FadeInSection>
                     </Section>
                 </div>

@@ -202,12 +202,12 @@ export default function BuildersPage() {
 
                         <FadeInSection>
                             <Chains title="Support for 100+ chains" type={CardType.primary} items={ChainsData}
-                                    counts={6}/>
+                                    counts={6} rows={2}/>
                         </FadeInSection>
 
                         <Section type={SectionType.row} gap={SectionGap.g32}>
                             <FadeInSection>
-                                <Card className="CardsSection">
+                                <Card className="CardsSection animation-scale-hover">
                                     <h3 className="CardsSection__title">Get started</h3>
                                     <p className="CardsSection__text">Extensive documentation for Squid SDK and the
                                         decentralized data lake network</p>
@@ -218,7 +218,7 @@ export default function BuildersPage() {
                             </FadeInSection>
 
                             <FadeInSection>
-                                <Card className="CardsSection">
+                                <Card className="CardsSection animation-scale-hover">
                                     <h3 className="CardsSection__title">Don’t want to self-host?</h3>
                                     <p className="CardsSection__text">We’ve got you covered. Explore our
                                         enterprise-grade hosted service, Aquarium</p>
