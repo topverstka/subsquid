@@ -6,6 +6,7 @@
 
 body {
   background: var(--background, #F6F8FB);
+  transition: background .3s ease-in-out;
 }
 
 .Container {

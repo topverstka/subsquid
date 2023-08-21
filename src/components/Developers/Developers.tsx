@@ -1,5 +1,4 @@
 import "./Developers.scss";
-import LikeImg from "../../assets/images/like.png";
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Grid, Pagination, Controller, EffectCreative, Thumbs} from "swiper/modules";
 import {Dispatch, SetStateAction, useState} from "react";
@@ -66,7 +65,6 @@ export default function Developers(props: DevepolerCardsProps) {
 
     return (
         <div className="Developers">
-            <h2 className="Developers__title">Developers <img src={LikeImg} alt=""/> SquidSDK</h2>
             <Swiper onSwiper={setMainSwiper} onInit={(s) => {
                 let maxValue = 0
                 s.slides.forEach(slide => {

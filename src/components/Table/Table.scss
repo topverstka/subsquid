@@ -1,7 +1,26 @@
 @import "../../assets/scss/spec/mixins";
 
+.scroll-page {
+  @include media-up(lg) {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    z-index: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__item {
+      width: 100%;
+      will-change: transform;
+      transition: transform 200ms ease-out;
+    }
+  }
+}
+
 .table-over {
   overflow: hidden;
+  width: 100%;
 
   @include media-up(md) {
     overflow: visible;
@@ -10,12 +29,29 @@
 
 .Table {
   overflow: hidden;
+  position: relative;
+  z-index: 1;
 
   &__title {
     margin-bottom: 24px;
     text-align: center;
 
-    span {
+    @include media-down(md) {
+      font-size: 32px;
+      margin-top: 40px;
+      margin-bottom: 24px;
+    }
+
+    @include media-down(sm) {
+      font-size: 24px;
+      margin-top: 56px;
+    }
+
+    .br {
+      display: block;
+    }
+
+    .icon {
       content: url('../../assets/images/fist.png');
       width: 24px;
       height: 24px;
@@ -30,8 +66,8 @@
 
       @include media-up(lg) {
         margin-right: 12px;
-        width: 36px;
-        height: 36px;
+        width: 40px;
+        height: 40px;
       }
 
       @include media-up(xxl) {

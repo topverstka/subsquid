@@ -18,7 +18,6 @@ export interface TableRowParams {
 export interface TableParams {
     headers: TableHeaderParams[],
     rows: TableRowParams[],
-    title: string | JSX.Element,
 }
 
 export default function Table(params: TableParams) {
@@ -82,7 +81,6 @@ export default function Table(params: TableParams) {
 
     return (
         <div className="Table">
-            <h2 className="Table__title">{params.title}</h2>
             <div className="Table__wrapper">
                 <div className="Table__virtual">
                     <Swiper breakpoints={{

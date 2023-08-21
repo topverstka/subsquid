@@ -1,6 +1,8 @@
 @import "../../assets/scss/spec/mixins";
 
 .Section {
+  position: relative;
+  z-index: 1;
   $root: &;
   display: grid;
   grid-template-columns: 1fr;

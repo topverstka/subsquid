@@ -27,8 +27,8 @@ export default function HomePage() {
             <Header isDark={true} coordYDarkEnd={window.innerHeight}/>
             <Banner/>
             <div className="Container">
-                <div className="HomePage">
-                    <FadeInSection>
+                <FadeInSection>
+                    <div className="HomePage">
                         <Card className="HomePage__section animation-scale-hover" type={CardType.primary}>
                             <div className="HomePage-card">
                                 <img className="HomePage-card__icon" src={Gear} alt="Build with SquidSDK"/>
@@ -43,8 +43,6 @@ export default function HomePage() {
                                 </div>
                             </div>
                         </Card>
-                    </FadeInSection>
-                    <FadeInSection>
                         <Card className="HomePage__section animation-scale-hover" type={CardType.primary}>
                             <div className="HomePage-card">
                                 <img className="HomePage-card__icon" src={Chains} alt="Onboard a chain"/>
@@ -60,8 +58,6 @@ export default function HomePage() {
                                 </div>
                             </div>
                         </Card>
-                    </FadeInSection>
-                    <FadeInSection>
                         <Card className="HomePage__section" type={CardType.primary}>
                             <div className="HomePageCard">
                                 <div className="HomePageCard__header">
@@ -82,8 +78,6 @@ export default function HomePage() {
                                 </div>
                             </div>
                         </Card>
-                    </FadeInSection>
-                    <FadeInSection>
                         <div className="HomePage__section">
                             <Card type={CardType.primary}>
                                 <div className="HomePageCard">
@@ -116,8 +110,8 @@ export default function HomePage() {
                                 </label>
                             </form>
                         </div>
-                    </FadeInSection>
-                </div>
+                    </div>
+                </FadeInSection>
             </div>
             <Footer/>
         </>
