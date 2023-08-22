@@ -7,7 +7,7 @@ input[type="button"], input[type="reset"], input[type="submit"], button, .Button
   color: var(--white, #F9F9F9);
   border-radius: 4px;
   user-select: none;
-  transition: background-color .2s, color .1s;
+  transition: background-color .3s, color .2s;
   text-align: center;
   font-size: 16px;
   font-weight: 500;
@@ -27,6 +27,8 @@ input[type="button"], input[type="reset"], input[type="submit"], button, .Button
 }
 
 .Button {
+  transition: background-color .3s, color .2s !important;
+
   &--orange {
     background: var(--orange, #FF6C2E);
   }

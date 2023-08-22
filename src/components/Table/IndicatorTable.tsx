@@ -1,4 +1,4 @@
-import './Table.scss'
+import '../Table/Table.scss'
 
 export enum TypeIndicatorTable {
     red = '#F42F2F',

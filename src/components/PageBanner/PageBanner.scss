@@ -99,6 +99,13 @@
     }
   }
 
+  &__image-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
   &--image {
     #{$root} {
       &__buttons {

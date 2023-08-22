@@ -8,6 +8,8 @@
   color: inherit;
   height: 36px;
 
+  transition: background-color .3s, color .2s;
+
   &__section {
     display: grid;
     grid-template-columns: auto 1fr;

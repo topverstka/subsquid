@@ -202,7 +202,6 @@
 }
 
 .DeveloperBullet {
-  overflow: hidden;
   position: relative;
   z-index: 0;
   width: 48px;
@@ -222,6 +221,15 @@
     object-fit: cover;
     transition: .2s;
     outline: 2px solid transparent;
+  }
+
+  svg {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .2s;
   }
 }
 
@@ -243,12 +251,32 @@
     @media (max-width: 340px) {max-width: 230px;}
   }
 
+  .swiper {
+    padding: 10px 10px;
+    margin: 0 -10px;
+  }
+
   .swiper-slide {
+    position: relative;
+    left: 20px;
     opacity: 0;
     transition: opacity .3s;
+    width: 48px;
+    height: 48px;
 
-    &.swiper-slide-visible {
+    &.swiper-slide-visible, &.swiper-slide-prev, &.swiper-slide-next {
       opacity: 1;
+    }
+
+    &.swiper-slide-next {
+      & + .swiper-slide,
+      & + .swiper-slide + .swiper-slide,
+      & + .swiper-slide + .swiper-slide + .swiper-slide,
+      & + .swiper-slide + .swiper-slide + .swiper-slide + .swiper-slide,
+      & + .swiper-slide + .swiper-slide + .swiper-slide + .swiper-slide + .swiper-slide
+      {
+        opacity: 1;
+      }
     }
 
     &.swiper-slide-thumb-active {
@@ -259,6 +287,11 @@
 
         img {
           filter: none;
+        }
+
+        svg {
+          opacity: 1;
+          visibility: visible;
         }
       }
     }

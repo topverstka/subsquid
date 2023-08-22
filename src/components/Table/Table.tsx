@@ -1,130 +1,104 @@
 import './Table.scss'
-import classNames from "classnames";
-import {Dispatch, JSX, SetStateAction, useEffect, useState} from "react";
+import {Dispatch, JSX, SetStateAction, useState} from "react";
 import {Swiper, SwiperSlide} from 'swiper/react';
 import {Controller, FreeMode} from 'swiper/modules';
-
-interface TableHeaderParams {
-    text?: string,
-    isEmpty?: boolean,
-    isBold?: boolean
-}
-
-export interface TableRowParams {
-    title: string,
-    els: string[] | JSX.Element[],
-}
+import classNames from "classnames";
 
 export interface TableParams {
-    headers: TableHeaderParams[],
-    rows: TableRowParams[],
+    items: {
+        title: string,
+        els: {
+            title?: string,
+            el: string | JSX.Element
+        }[],
+    }[]
 }
 
 export default function Table(params: TableParams) {
     const [swipers, setSwipers]: [any, Dispatch<SetStateAction<any>>] = useState([])
 
-    const rows = params.rows.map((row, index) => {
-        let items = row.els.map((_el, _index) => {
-            return <SwiperSlide className="Table-row__item" key={_index} virtualIndex={index}>{_el}</SwiperSlide>
-        })
-
-        if(window.innerWidth >= 768) {
-            items = [<SwiperSlide key={9999} className="Table-row__item"><p className="Table-row__title">{row.title}</p></SwiperSlide>, ...items]
-        }
-
-        return <div className="Table-row" key={index}>
-            {window.innerWidth < 768 ? <p className="Table-row__title">{row.title}</p> : <></>}
-            <Swiper breakpoints={{
-                0: {
-                    spaceBetween: 24,
-                    allowTouchMove: false,
-                    slidesPerView: 2.2,
-                    slidesPerGroupAuto: true
-                },
-                768: {
-                    enabled: false,
-                    spaceBetween: 0,
-                    allowTouchMove: false,
-                    width: 100,
-                    slidesPerView: 1,
-                    slidesPerGroupAuto: false,
-                    cssMode: true
-                },
-                1024: {
-                    enabled: false,
-                    spaceBetween: 0,
-                    allowTouchMove: false,
-                    slidesPerView: 1,
-                    slidesPerGroupAuto: false,
-                    cssMode: true,
-                    width: 120,
-                }
-            }} modules={[Controller, FreeMode]} onSwiper={(s) => setSwipers((_s: any) => [..._s, s])}
-                    className="Table-row__items">{items}</Swiper>
-        </div>
-    })
-    const headers = params.headers.map((header, index) => {
-        const el = <SwiperSlide key={index} virtualIndex={index} className={classNames({
-            "Table-header__item": true,
-            "Table-header__item--empty": header.isEmpty,
-            "Table-header__item--bold": header.isBold,
-        })}>{header.text || ''}</SwiperSlide>
-
-        if (window.innerWidth < 768) {
-            if (header.isEmpty) {
-                return null
-            }
-        }
-
-        return el
+    const items = params.items.map((item, index) => {
+        if (index === 0 && window.innerWidth < 768) return
+        return <SwiperSlide key={index} className="Table__item-wrap">
+            <div className="Table-header">
+                <div className={classNames({
+                    'Table-header__item': true,
+                    'Table-header__item--bold': index === 0
+                })}>{item.title}</div>
+            </div>
+            <div className="Table-rows">
+                {item.els.map(((_el, _index) => <div key={_index} className="Table-row">
+                    {_el.title && window.innerWidth < 768 ? <p className="Table-row__title">{_el.title}</p> : <></>}
+                    <span>{_el.el}</span>
+                </div>))}
+            </div>
+        </SwiperSlide>
     })
 
-    return (
-        <div className="Table">
-            <div className="Table__wrapper">
-                <div className="Table__virtual">
-                    <Swiper breakpoints={{
-                        768: {
-                            enabled: false,
-                            cssMode: true,
-                        }
-                    }} modules={[Controller, FreeMode]} spaceBetween={24} slidesPerView={2.2}
-                            controller={{control: swipers}} slidesPerGroupAuto={true}>
-                        {...headers.map((h, i) => <SwiperSlide className="Table__virtual-item" virtualIndex={i}
-                                                               key={i}></SwiperSlide>)}
-                    </Swiper>
-                </div>
-                <div>
-                    <Swiper breakpoints={{
-                        0: {
-                            spaceBetween: 24,
-                            allowTouchMove: false,
-                            slidesPerView: 2.2,
-                            slidesPerGroupAuto: true
-                        },
-                        768: {
-                            enabled: false,
-                            spaceBetween: 0,
-                            allowTouchMove: false,
-                            width: 100,
-                            slidesPerView: 1,
-                            slidesPerGroupAuto: false,
-                            cssMode: true
-                        },
-                        1024: {
-                            enabled: false,
-                            spaceBetween: 0,
-                            allowTouchMove: false,
-                            slidesPerView: 1,
-                            slidesPerGroupAuto: false,
-                            cssMode: true,
-                            width: 120,
-                        }
-                    }} modules={[Controller, FreeMode]} onSwiper={(s) => setSwipers((_s: any) => [..._s, s])}
-                            className="Table-header">{headers}</Swiper>
-                    <div className="Table-rows">{rows}</div>
+    return <div className="Table">
+        <div className="Table__wrapper">
+            {window.innerWidth < 768 ? <div className="Table__virtual">
+                <Swiper breakpoints={{
+                    768: {
+                        enabled: false,
+                        cssMode: true,
+                    }
+                }} modules={[Controller, FreeMode]} spaceBetween={24} slidesPerView={2.2}
+                        controller={{control: swipers}} slidesPerGroupAuto={true}>
+                    {...items.map((h, i) => <SwiperSlide className="Table__virtual-item" virtualIndex={i}
+                                                         key={i}></SwiperSlide>)}
+                </Swiper>
+            </div> : undefined}
+            <div className="Table__items">
+                {window.innerWidth < 768 ? <div className="Table__item Table__item--first">
+                    <div className="Table__item-wrap">
+                        <div className="Table-header">
+                            <div className="Table-header__item Table-header__item--bold">{params.items[0].title}</div>
+                        </div>
+                        <div className="Table-rows">
+                            {...params.items[0].els.map((item, index) => <div className="Table-row Table-row--first"
+                                                                              key={index}>
+                                {item.title && window.innerWidth < 768 ?
+                                    <p className="Table-row__title">{item.title}</p> : <></>}
+                                <span>{item.el}</span>
+                            </div>)}
+                        </div>
+                    </div>
+                </div> : <div className="Table__item Table__item--first">
+                    <div className="Table__item-wrap">
+                        <div className="Table-header">
+                            <div className="Table-header__item"></div>
+                        </div>
+                        <div className="Table-rows">
+                            {...params.items[0].els.map((item, index) => <div className="Table-row" key={index}>
+                                {item.title ?
+                                    <p className="Table-row__title">{item.title}</p> : <></>}
+                            </div>)}
+                        </div>
+                    </div>
+                </div>}
+                <div className="Table__item">
+                    {window.innerWidth < 768 ?
+                        <Swiper breakpoints={{
+                            0: {
+                                spaceBetween: 24,
+                                allowTouchMove: true,
+                                slidesPerView: 1.2,
+                                slidesPerGroupAuto: true
+                            },
+                            420: {
+                                slidesPerView: 1.5,
+                            },
+                            480: {
+                                slidesPerView: 2,
+                            },
+                            600: {
+                                slidesPerView: 2.3,
+                            }
+                        }} modules={[Controller, FreeMode]} onSwiper={(s) => setSwipers((_s: any) => [..._s, s])}
+                                className="Table-row__items">{items}</Swiper> : items}
                 </div>
             </div>
         </div>
-    );
+    </div>
 }

@@ -21,7 +21,7 @@ export default function PageBanner(props: PageBannerProps) {
     const [isVisibleSubtitle, setVisibleSubtitle] = useState(false)
     const [isVisibleTitle, setVisibleTitle] = useState(false)
     const [isVisibleText, setVisibleText] = useState(false)
-    const [isVisibleButtons, setVisibleButtons]: any = useState([])
+    const [isVisibleButtons, setVisibleButtons]: any = useState(false)
     const [isVisibleImage, setVisibleImage] = useState(false)
 
     useEffect(() => {
@@ -38,11 +38,7 @@ export default function PageBanner(props: PageBannerProps) {
                         setVisibleImage(true)
                     }, 300)
 
-                    buttons.forEach((button, index) => {
-                        setTimeout(() => {
-                            setVisibleButtons((prevState: any[]) => [...prevState, true])
-                        }, 300 * index)
-                    })
+                    setVisibleButtons(true)
                 }, 300)
             }, 300)
         }, 300)
@@ -52,8 +48,6 @@ export default function PageBanner(props: PageBannerProps) {
         return <a className={classNames({
             'Button': true,
             [`Button--${item.type}`]: !!item.type,
-            'animation-fade': true,
-            'animation-fade--visible': isVisibleButtons[index],
         })} key={index} href={item.href} target="_blank">{item.text}</a>
     }) : []
 
@@ -78,13 +72,17 @@ export default function PageBanner(props: PageBannerProps) {
                     'animation-fade': true,
                     'animation-fade--visible': isVisibleText
                 })}>{props.text}</p> : <></>}
-                {buttons ? <div className="PageBanner__buttons">{buttons}</div> : <></>}
+                {buttons ? <div className={classNames({
+                    'PageBanner__buttons': true,
+                    'animation-fade': true,
+                    'animation-fade--visible': isVisibleButtons
+                })}>{buttons}</div> : <></>}
             </div>
-            {!!props?.image ? <img className={classNames({
+            {!!props?.image ? <div className='PageBanner__image-box'><div><img className={classNames({
                 'PageBanner__image': true,
                 'animation-fade': true,
                 'animation-fade--visible': isVisibleImage
-            })} src={props.image} alt={props.title}/> : <></>}
+            })} src={props.image} alt={props.title}/></div></div> : <></>}
         </div>
     );
 }

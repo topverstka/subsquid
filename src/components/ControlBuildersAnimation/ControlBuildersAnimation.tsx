@@ -19,169 +19,176 @@ import LikeImg from "../../assets/images/like.png";
 import AnimationTitle from "./AnimationTitle";
 
 const tableParams: TableParams = {
-    rows: [
+    items: [
         {
-            title: "Indexing speed",
-            els: [<b>150,000 blocks/s</b>, <span>150 blocks/s</span>, <span>250 blocks/s</span>,
-                <span>450 blocks/s</span>, <span>750 blocks/s</span>]
-        },
-        {
-            title: "Programming language",
-            els: ["TypeScript", "AssemblyScript", "AssemblyScript", "AssemblyScript", "AssemblyScript"]
-        },
-        {
-            title: "Real-time indexing",
+            title: "Subsquid",
             els: [
-                IndicatorTable({type: TypeIndicatorTable.green}),
-                IndicatorTable({type: TypeIndicatorTable.red}),
-                IndicatorTable({type: TypeIndicatorTable.red}),
-                IndicatorTable({type: TypeIndicatorTable.green}),
-                IndicatorTable({type: TypeIndicatorTable.green})
+                {
+                    title: "Indexing speed",
+                    el: <b>150,000 blocks/s</b>
+                },
+                {
+                    title: "Programming language",
+                    el: "TypeScript"
+                },
+                {
+                    title: "Real-time indexing",
+                    el: IndicatorTable({type: TypeIndicatorTable.green})
+                },
+                {
+                    title: "Off-chain data sources",
+                    el: IndicatorTable({type: TypeIndicatorTable.green})
+                },
+                {
+                    title: "Fully custom data targets",
+                    el: IndicatorTable({type: TypeIndicatorTable.green})
+                },
+                {
+                    title: "GraphQL API",
+                    el: IndicatorTable({type: TypeIndicatorTable.green})
+                },
+                {
+                    title: "Node-free local setup",
+                    el: IndicatorTable({type: TypeIndicatorTable.green})
+                },
+                {
+                    title: "Managed service",
+                    el: IndicatorTable({type: TypeIndicatorTable.green})
+                },
+                {
+                    title: "Decentralized databases",
+                    el: IndicatorTable({type: TypeIndicatorTable.green})
+                },
+                {
+                    title: "ABI to API tool",
+                    el: IndicatorTable({type: TypeIndicatorTable.green})
+                },
+                {
+                    title: "Decentralized Network",
+                    el: IndicatorTable({type: TypeIndicatorTable.green})
+                },
+                {
+                    title: "Free data access",
+                    el: IndicatorTable({type: TypeIndicatorTable.green})
+                }
             ]
         },
         {
-            title: "Off-chain data sources",
+            title: "The graph",
             els: [
-                IndicatorTable({type: TypeIndicatorTable.green}),
-                IndicatorTable({type: TypeIndicatorTable.red}),
-                IndicatorTable({type: TypeIndicatorTable.red}),
-                IndicatorTable({type: TypeIndicatorTable.green}),
-                IndicatorTable({type: TypeIndicatorTable.green})
+                {el: "150 blocks/s"},
+                {el: "AssemblyScript"},
+                {el: IndicatorTable({type: TypeIndicatorTable.red})},
+                {el: IndicatorTable({type: TypeIndicatorTable.red})},
+                {el: IndicatorTable({type: TypeIndicatorTable.red})},
+                {el: IndicatorTable({type: TypeIndicatorTable.green})},
+                {el: IndicatorTable({type: TypeIndicatorTable.red})},
+                {el: IndicatorTable({type: TypeIndicatorTable.yellow})},
+                {el: IndicatorTable({type: TypeIndicatorTable.red})},
+                {el: IndicatorTable({type: TypeIndicatorTable.green})},
+                {el: IndicatorTable({type: TypeIndicatorTable.green})},
+                {el: IndicatorTable({type: TypeIndicatorTable.red})},
             ]
         },
         {
-            title: "Fully custom data targets",
+            title: "SubQuery",
             els: [
-                IndicatorTable({type: TypeIndicatorTable.green}),
-                IndicatorTable({type: TypeIndicatorTable.red}),
-                IndicatorTable({type: TypeIndicatorTable.red}),
-                IndicatorTable({type: TypeIndicatorTable.yellow}),
-                IndicatorTable({type: TypeIndicatorTable.yellow})
+                {el: "250 blocks/s"},
+                {el: "AssemblyScript"},
+                {el: IndicatorTable({type: TypeIndicatorTable.red})},
+                {el: IndicatorTable({type: TypeIndicatorTable.red})},
+                {el: IndicatorTable({type: TypeIndicatorTable.red})},
+                {el: IndicatorTable({type: TypeIndicatorTable.green})},
+                {el: IndicatorTable({type: TypeIndicatorTable.red})},
+                {el: IndicatorTable({type: TypeIndicatorTable.yellow})},
+                {el: IndicatorTable({type: TypeIndicatorTable.red})},
+                {el: IndicatorTable({type: TypeIndicatorTable.red})},
+                {el: IndicatorTable({type: TypeIndicatorTable.green})},
+                {el: IndicatorTable({type: TypeIndicatorTable.red})},
             ]
         },
         {
-            title: "GraphQL API",
+            title: "GoldSky",
             els: [
-                IndicatorTable({type: TypeIndicatorTable.green}),
-                IndicatorTable({type: TypeIndicatorTable.green}),
-                IndicatorTable({type: TypeIndicatorTable.green}),
-                IndicatorTable({type: TypeIndicatorTable.green}),
-                IndicatorTable({type: TypeIndicatorTable.green})
+                {el: "450 blocks/s"},
+                {el: "AssemblyScript"},
+                {el: IndicatorTable({type: TypeIndicatorTable.green})},
+                {el: IndicatorTable({type: TypeIndicatorTable.green})},
+                {el: IndicatorTable({type: TypeIndicatorTable.yellow})},
+                {el: IndicatorTable({type: TypeIndicatorTable.green})},
+                {el: IndicatorTable({type: TypeIndicatorTable.red})},
+                {el: IndicatorTable({type: TypeIndicatorTable.green})},
+                {el: IndicatorTable({type: TypeIndicatorTable.red})},
+                {el: IndicatorTable({type: TypeIndicatorTable.green})},
+                {el: IndicatorTable({type: TypeIndicatorTable.red})},
+                {el: IndicatorTable({type: TypeIndicatorTable.red})},
             ]
         },
         {
-            title: "Node-free local setup",
+            title: "Satsuma",
             els: [
-                IndicatorTable({type: TypeIndicatorTable.green}),
-                IndicatorTable({type: TypeIndicatorTable.red}),
-                IndicatorTable({type: TypeIndicatorTable.red}),
-                IndicatorTable({type: TypeIndicatorTable.red}),
-                IndicatorTable({type: TypeIndicatorTable.red})
+                {el: "750 blocks/s"},
+                {el: "AssemblyScript"},
+                {el: IndicatorTable({type: TypeIndicatorTable.green})},
+                {el: IndicatorTable({type: TypeIndicatorTable.green})},
+                {el: IndicatorTable({type: TypeIndicatorTable.yellow})},
+                {el: IndicatorTable({type: TypeIndicatorTable.green})},
+                {el: IndicatorTable({type: TypeIndicatorTable.red})},
+                {el: IndicatorTable({type: TypeIndicatorTable.green})},
+                {el: IndicatorTable({type: TypeIndicatorTable.red})},
+                {el: IndicatorTable({type: TypeIndicatorTable.green})},
+                {el: IndicatorTable({type: TypeIndicatorTable.red})},
+                {el: IndicatorTable({type: TypeIndicatorTable.red})},
             ]
         },
-        {
-            title: "Managed service",
-            els: [
-                IndicatorTable({type: TypeIndicatorTable.green}),
-                IndicatorTable({type: TypeIndicatorTable.yellow}),
-                IndicatorTable({type: TypeIndicatorTable.yellow}),
-                IndicatorTable({type: TypeIndicatorTable.green}),
-                IndicatorTable({type: TypeIndicatorTable.green})
-            ]
-        },
-        {
-            title: "Decentralized databases",
-            els: [
-                IndicatorTable({type: TypeIndicatorTable.green}),
-                IndicatorTable({type: TypeIndicatorTable.red}),
-                IndicatorTable({type: TypeIndicatorTable.red}),
-                IndicatorTable({type: TypeIndicatorTable.red}),
-                IndicatorTable({type: TypeIndicatorTable.red})
-            ]
-        },
-        {
-            title: "ABI to API tool",
-            els: [
-                IndicatorTable({type: TypeIndicatorTable.green}),
-                IndicatorTable({type: TypeIndicatorTable.green}),
-                IndicatorTable({type: TypeIndicatorTable.red}),
-                IndicatorTable({type: TypeIndicatorTable.green}),
-                IndicatorTable({type: TypeIndicatorTable.green})
-            ]
-        },
-        {
-            title: "Decentralized Network",
-            els: [
-                IndicatorTable({type: TypeIndicatorTable.green}),
-                IndicatorTable({type: TypeIndicatorTable.green}),
-                IndicatorTable({type: TypeIndicatorTable.green}),
-                IndicatorTable({type: TypeIndicatorTable.red}),
-                IndicatorTable({type: TypeIndicatorTable.red})
-            ]
-        },
-        {
-            title: "Free data access",
-            els: [
-                IndicatorTable({type: TypeIndicatorTable.green}),
-                IndicatorTable({type: TypeIndicatorTable.red}),
-                IndicatorTable({type: TypeIndicatorTable.red}),
-                IndicatorTable({type: TypeIndicatorTable.red}),
-                IndicatorTable({type: TypeIndicatorTable.red})
-            ]
-        }
-    ],
-    headers: [
-        {isEmpty: true},
-        {text: 'Subsquid', isBold: true},
-        {text: 'The graph'},
-        {text: 'SubQuery'},
-        {text: 'GoldSky'},
-        {text: 'Satsuma'},
-    ],
+    ]
 }
 
 
 export default function ControlBuildersAnimation(props: any) {
     const Visible = function (target: any) {
         const getBoundingClientRect = target.getBoundingClientRect()
-        // Все позиции элемента
-        const targetPosition = {
-                top: window.pageYOffset + getBoundingClientRect.top,
-                left: window.pageXOffset + getBoundingClientRect.left,
-                right: window.pageXOffset + getBoundingClientRect.right,
-                bottom: window.pageYOffset + getBoundingClientRect.bottom
-            },
-            // Получаем позиции окна
-            windowPosition = {
-                top: window.pageYOffset,
-                left: window.pageXOffset,
-                right: window.pageXOffset + document.documentElement.clientWidth,
-                bottom: window.pageYOffset + document.documentElement.clientHeight
-            };
 
-        if (targetPosition.bottom > windowPosition.top && // Если позиция нижней части элемента больше позиции верхней чайти окна, то элемент виден сверху
-            targetPosition.top < windowPosition.bottom && // Если позиция верхней части элемента меньше позиции нижней чайти окна, то элемент виден снизу
-            targetPosition.right > windowPosition.left && // Если позиция правой стороны элемента больше позиции левой части окна, то элемент виден слева
-            targetPosition.left < windowPosition.right) { // Если позиция левой стороны элемента меньше позиции правой чайти окна, то элемент виден справа
+        if (getBoundingClientRect) {
+            // Все позиции элемента
+            const targetPosition = {
+                    top: window.pageYOffset + getBoundingClientRect.top,
+                    left: window.pageXOffset + getBoundingClientRect.left,
+                    right: window.pageXOffset + getBoundingClientRect.right,
+                    bottom: window.pageYOffset + getBoundingClientRect.bottom
+                },
+                // Получаем позиции окна
+                windowPosition = {
+                    top: window.pageYOffset,
+                    left: window.pageXOffset,
+                    right: window.pageXOffset + document.documentElement.clientWidth,
+                    bottom: window.pageYOffset + document.documentElement.clientHeight
+                };
 
-            const top = getBoundingClientRect.top < 0 ? getBoundingClientRect.top * -1 : 0,
-                bottom = getBoundingClientRect.bottom,
-                height = getBoundingClientRect.height,
-                topProcent = parseFloat((top / height).toFixed(2)),
-                bottomProcent = parseFloat((bottom / (height)).toFixed(2)),
-                centerProcent = parseFloat(((((getBoundingClientRect.top - height) * -1) - 1) / height).toFixed(2)),
-                centerProcentBottom = parseFloat(((getBoundingClientRect.top / height)).toFixed(2))
+            if (targetPosition.bottom > windowPosition.top && // Если позиция нижней части элемента больше позиции верхней чайти окна, то элемент виден сверху
+                targetPosition.top < windowPosition.bottom && // Если позиция верхней части элемента меньше позиции нижней чайти окна, то элемент виден снизу
+                targetPosition.right > windowPosition.left && // Если позиция правой стороны элемента больше позиции левой части окна, то элемент виден слева
+                targetPosition.left < windowPosition.right) { // Если позиция левой стороны элемента меньше позиции правой чайти окна, то элемент виден справа
 
-            console.clear()
+                const top = getBoundingClientRect.top < 0 ? getBoundingClientRect.top * -1 : 0,
+                    bottom = getBoundingClientRect.bottom,
+                    height = getBoundingClientRect.height,
+                    topProcent = parseFloat((top / height).toFixed(2)),
+                    bottomProcent = parseFloat((bottom / (height)).toFixed(2)),
+                    centerProcent = parseFloat(((((getBoundingClientRect.top - height) * -1) - 1) / height).toFixed(2)),
+                    centerProcentBottom = parseFloat(((getBoundingClientRect.top / height)).toFixed(2))
 
-            return {
-                topProcent: topProcent,
-                bottomProcent: bottomProcent < 1 ? bottomProcent : 1,
-                centerProcent: centerProcent < 1 ? centerProcent : 1,
-                centerProcentBottom: centerProcentBottom < 0 ? 0 : centerProcentBottom,
-                top: top,
-                bottom: bottom,
-                height: height,
+                console.clear()
+
+                return {
+                    topProcent: topProcent,
+                    bottomProcent: bottomProcent < 1 ? bottomProcent : 1,
+                    centerProcent: centerProcent < 1 ? centerProcent : 1,
+                    centerProcentBottom: centerProcentBottom < 0 ? 0 : centerProcentBottom,
+                    top: top,
+                    bottom: bottom,
+                    height: height,
+                }
             }
         }
     };
@@ -203,7 +210,6 @@ export default function ControlBuildersAnimation(props: any) {
         }
     }, []);
 
-
     return (
         <>
             <div ref={domRef}>
@@ -213,7 +219,7 @@ export default function ControlBuildersAnimation(props: any) {
                         className="icon"></span></span></h2>
                 </AnimationTitle>
 
-                <Table rows={tableParams.rows} headers={tableParams.headers}/>
+                <Table items={tableParams.items}/>
 
                 <AnimationTitle>
                     <h2 className="Developers__title H1">Developers <img src={LikeImg} alt=""/> SquidSDK</h2>

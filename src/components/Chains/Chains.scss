@@ -5,7 +5,6 @@
   gap: 12px;
   text-align: center;
   display: grid;
-  transform: scale(0);
   transition: .3s;
 
   &__title {
@@ -40,10 +39,6 @@
     &--visible {
       visibility: visible;
       opacity: 1;
-
-      .ChainItem {
-        transform: scale(1);
-      }
 
       &:not(:first-child) {
         margin-top: 32px;

@@ -12,22 +12,7 @@ import Section, {SectionGap, SectionType} from "../../components/Section/Section
 import MoneyImg from "../../assets/images/money.png";
 import NinjaImg from "../../assets/images/ninja.png";
 import VoltageImg from "../../assets/images/voltage.png";
-import TwitterImg from "../../assets/images/twitter.png";
 import CardItemsText from "../../components/CardItemsText/CardItemsText";
-import Developers from "../../components/Developers/Developers";
-
-import User1PuctureImg from "../../assets/images/user-1.jpg";
-import User2PuctureImg from "../../assets/images/user-2.jpg";
-import User3PuctureImg from "../../assets/images/user-3.jpg";
-import User4PuctureImg from "../../assets/images/user-4.jpg";
-import User5PuctureImg from "../../assets/images/user-5.jpg";
-import User6PuctureImg from "../../assets/images/user-6.jpg";
-import User7PuctureImg from "../../assets/images/user-7.jpg";
-import User8PuctureImg from "../../assets/images/user-8.jpg";
-import User9PuctureImg from "../../assets/images/user-9.jpg";
-import User10PuctureImg from "../../assets/images/user-10.jpg";
-import User11PuctureImg from "../../assets/images/user-11.jpg";
-import User12PuctureImg from "../../assets/images/user-12.jpg";
 import {Link} from "react-router-dom";
 import {FadeInSection} from "../../components/FadeInSection/FadeInSection";
 import ControlBuildersAnimation from "../../components/ControlBuildersAnimation/ControlBuildersAnimation";

@@ -34,17 +34,15 @@
         color: var(--buttons-button-default, #3880EC);
       }
     }
+  }
 
-    .CardPriceItem {
-      .CardPriceItem__wrap, .CardPriceItem__list {
-        transition: transform .4s ease-in-out;
-      }
+  .CardPriceItem__wrap, .CardPriceItem__list {
+    transition: transform .4s linear;
+  }
 
-      &:hover {
-        .CardPriceItem__wrap, .CardPriceItem__list {
-          transform: scale(1.05);
-        }
-      }
+  &:hover {
+    .CardPriceItem__wrap, .CardPriceItem__list {
+      transform: scale(1.05);
     }
   }
 }
